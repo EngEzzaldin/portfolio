@@ -7,7 +7,10 @@ const AUTH = (function () {
   const SESSION_TTL = 24 * 60 * 60 * 1000; // 24h
 
   function _init() {
-    if (!localStorage.getItem(PASSWORD_KEY)) {
+    var stored = localStorage.getItem(PASSWORD_KEY);
+    if (!stored) {
+      _setPassword(DEFAULT_PASSWORD);
+    } else if (stored === DEFAULT_PASSWORD) {
       _setPassword(DEFAULT_PASSWORD);
     }
     if (!localStorage.getItem(USERNAME_KEY)) {
@@ -42,6 +45,10 @@ const AUTH = (function () {
     try {
       var raw = sessionStorage.getItem(SESSION_KEY);
       if (!raw) return false;
+      if (raw === 'true') {
+        sessionStorage.removeItem(SESSION_KEY);
+        return false;
+      }
       var data = JSON.parse(raw);
       if (!data.authenticated) return false;
       if (Date.now() - data.timestamp > SESSION_TTL) {
