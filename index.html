@@ -446,6 +446,54 @@
         <button class="cms-btn cms-btn-primary" id="cmsAddExperience" data-i18n="cms.addExp">+ Add Experience</button>
       </div>
 
+      <!-- Roadmap -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.roadmap">Future Roadmap</div>
+        <div class="cms-sub-label" data-i18n="cms.currentItems">Current Roadmap:</div>
+        <div id="cmsRoadmapList"></div>
+        <div class="cms-add-separator"></div>
+        <div class="cms-sub-label" data-i18n="cms.addNew">Add New Roadmap Item:</div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.rmTitleAr">Title (Arabic)</label>
+            <input type="text" id="cmsRmTitleAr">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.rmTitleEn">Title (English)</label>
+            <input type="text" id="cmsRmTitleEn">
+          </div>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.rmStatusAr">Status (Arabic)</label>
+            <select id="cmsRmStatusAr">
+              <option value="فعال وتطبيقي">فعال وتطبيقي</option>
+              <option value="قيد التعلم والتدريب">قيد التعلم والتدريب</option>
+              <option value="بحث مستفيض ودراسة">بحث مستفيض ودراسة</option>
+            </select>
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.rmStatusEn">Status (English)</label>
+            <select id="cmsRmStatusEn">
+              <option value="Active Deployment">Active Deployment</option>
+              <option value="Active Learning">Active Learning</option>
+              <option value="Deep Research">Deep Research</option>
+            </select>
+          </div>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.rmDescAr">Description (Arabic)</label>
+            <textarea id="cmsRmDescAr"></textarea>
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.rmDescEn">Description (English)</label>
+            <textarea id="cmsRmDescEn"></textarea>
+          </div>
+        </div>
+        <button class="cms-btn cms-btn-primary" id="cmsAddRoadmap" data-i18n="cms.addRoadmap">+ Add Roadmap Item</button>
+      </div>
+
       <!-- Change Password -->
       <div class="cms-section">
         <div class="cms-section-title" data-i18n="cms.changePwd">Change Password</div>

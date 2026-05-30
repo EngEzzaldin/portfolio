@@ -1,7 +1,10 @@
+var _editExpIndex = -1;
+
 function renderCMSLists() {
   renderCMSSkills();
   renderCMSProjects();
   renderCMSExperience();
+  renderCMSRoadmap();
 }
 
 function renderCMSSkills() {
@@ -50,16 +53,38 @@ function renderCMSExperience() {
   list.innerHTML = d.experience.map((exp, i) => `
     <div class="cms-skill-item">
       <span class="cms-item-name">${escapeHtml(exp.companyEn)} - ${escapeHtml(exp.roleEn)}</span>
-      <button class="cms-item-delete" data-experience-index="${i}">&times;</button>
+      <span>
+        <button class="cms-item-edit" data-exp-edit="${i}" title="Edit" style="background:none;border:none;color:var(--clr-accent);cursor:pointer;padding:2px 6px;font-size:0.8rem;">&#9998;</button>
+        <button class="cms-item-delete" data-exp-del="${i}" title="Delete">&times;</button>
+      </span>
     </div>
   `).join('');
-  list.querySelectorAll('.cms-item-delete').forEach(btn => {
+
+  list.querySelectorAll('[data-exp-del]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const idx = parseInt(btn.dataset.experienceIndex);
+      const idx = parseInt(btn.dataset.expDel);
       const d = AppState.getData();
       d.experience.splice(idx, 1);
       AppState.setData(d);
       renderAll();
+    });
+  });
+
+  list.querySelectorAll('[data-exp-edit]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.expEdit);
+      const exp = AppState.getData().experience[idx];
+      _editExpIndex = idx;
+      document.getElementById('cmsExpCompanyAr').value = exp.companyAr;
+      document.getElementById('cmsExpCompanyEn').value = exp.companyEn;
+      document.getElementById('cmsExpRoleAr').value = exp.roleAr;
+      document.getElementById('cmsExpRoleEn').value = exp.roleEn;
+      document.getElementById('cmsExpPeriodAr').value = exp.period;
+      document.getElementById('cmsExpPeriodEn').value = exp.periodEn;
+      document.getElementById('cmsExpDescAr').value = exp.descAr;
+      document.getElementById('cmsExpDescEn').value = exp.descEn;
+      document.getElementById('cmsAddExperience').textContent = 'Update Experience';
+      document.getElementById('cmsAddExperience').scrollIntoView({ behavior: 'smooth' });
     });
   });
 }
@@ -131,12 +156,25 @@ function initCMS() {
       return;
     }
     const d = AppState.getData();
-    d.experience.push({
-      id: 'exp-' + Date.now().toString(36),
-      companyAr, companyEn, roleAr, roleEn,
-      period: periodAr, periodEn: periodEn,
-      descAr, descEn
-    });
+    if (_editExpIndex >= 0) {
+      d.experience[_editExpIndex] = {
+        id: d.experience[_editExpIndex].id,
+        companyAr, companyEn, roleAr, roleEn,
+        period: periodAr, periodEn: periodEn,
+        descAr, descEn
+      };
+      _editExpIndex = -1;
+      document.getElementById('cmsAddExperience').textContent = '+ Add Experience';
+      showToast('Experience updated!', 'success');
+    } else {
+      d.experience.push({
+        id: 'exp-' + Date.now().toString(36),
+        companyAr, companyEn, roleAr, roleEn,
+        period: periodAr, periodEn: periodEn,
+        descAr, descEn
+      });
+      showToast('Experience added!', 'success');
+    }
     AppState.setData(d);
     document.getElementById('cmsExpCompanyAr').value = '';
     document.getElementById('cmsExpCompanyEn').value = '';
@@ -147,7 +185,6 @@ function initCMS() {
     document.getElementById('cmsExpDescAr').value = '';
     document.getElementById('cmsExpDescEn').value = '';
     renderAll();
-    showToast('Experience added!', 'success');
   });
 
   document.getElementById('cmsExport').addEventListener('click', () => {
@@ -269,5 +306,51 @@ function initCMS() {
     } else {
       showToast('Current password is incorrect', 'error');
     }
+  });
+
+  document.getElementById('cmsAddRoadmap').addEventListener('click', () => {
+    const titleAr = document.getElementById('cmsRmTitleAr').value.trim();
+    const titleEn = document.getElementById('cmsRmTitleEn').value.trim();
+    const statusAr = document.getElementById('cmsRmStatusAr').value;
+    const statusEn = document.getElementById('cmsRmStatusEn').value;
+    const descAr = document.getElementById('cmsRmDescAr').value.trim();
+    const descEn = document.getElementById('cmsRmDescEn').value.trim();
+    if (!titleAr || !titleEn || !descAr || !descEn) {
+      showToast('Please fill all fields', 'error');
+      return;
+    }
+    const d = AppState.getData();
+    d.roadmap.push({
+      id: 'rm-' + Date.now().toString(36),
+      titleAr, titleEn, statusAr, statusEn, descAr, descEn
+    });
+    AppState.setData(d);
+    document.getElementById('cmsRmTitleAr').value = '';
+    document.getElementById('cmsRmTitleEn').value = '';
+    document.getElementById('cmsRmDescAr').value = '';
+    document.getElementById('cmsRmDescEn').value = '';
+    renderAll();
+    showToast('Roadmap item added!', 'success');
+  });
+}
+
+function renderCMSRoadmap() {
+  const d = AppState.getData();
+  const list = document.getElementById('cmsRoadmapList');
+  if (!list) return;
+  list.innerHTML = d.roadmap.map((item, i) => `
+    <div class="cms-skill-item">
+      <span class="cms-item-name">${escapeHtml(item.titleEn)} (${escapeHtml(item.statusEn)})</span>
+      <button class="cms-item-delete" data-rm-del="${i}">&times;</button>
+    </div>
+  `).join('');
+  list.querySelectorAll('[data-rm-del]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.rmDel);
+      const d = AppState.getData();
+      d.roadmap.splice(idx, 1);
+      AppState.setData(d);
+      renderAll();
+    });
   });
 }

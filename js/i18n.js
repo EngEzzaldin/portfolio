@@ -111,7 +111,15 @@ const i18n = {
     changePwd: { en: 'Change Password', ar: 'تغيير كلمة السر' },
     currentPwd: { en: 'Current Password', ar: 'كلمة السر الحالية' },
     newPwd: { en: 'New Password (min 4 chars)', ar: 'كلمة السر الجديدة (4 أحرف فأكثر)' },
-    changePwdBtn: { en: 'Update Password', ar: 'تحديث كلمة السر' }
+    changePwdBtn: { en: 'Update Password', ar: 'تحديث كلمة السر' },
+    roadmap: { en: 'Future Roadmap', ar: 'الآفاق المستقبلية' },
+    addRoadmap: { en: '+ Add Roadmap Item', ar: '+ إضافة عنصر خارطة طريق' },
+    rmTitleAr: { en: 'Title (Arabic)', ar: 'العنوان (عربي)' },
+    rmTitleEn: { en: 'Title (English)', ar: 'العنوان (إنجليزي)' },
+    rmStatusAr: { en: 'Status (Arabic)', ar: 'الحالة (عربي)' },
+    rmStatusEn: { en: 'Status (English)', ar: 'الحالة (إنجليزي)' },
+    rmDescAr: { en: 'Description (Arabic)', ar: 'الوصف (عربي)' },
+    rmDescEn: { en: 'Description (English)', ar: 'الوصف (إنجليزي)' }
   },
   auth: {
     title: { en: 'CMS Access', ar: 'الوصول للوحة التحكم' },
