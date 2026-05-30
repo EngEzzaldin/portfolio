@@ -127,6 +127,9 @@ const i18n = {
     contactGithub: { en: 'GitHub URL', ar: 'رابط GitHub' },
     contactLinkedin: { en: 'LinkedIn URL', ar: 'رابط LinkedIn' }
   },
+  footer: {
+    credit: { en: 'Work of Engineer Ezzeddin Khaled Obaid', ar: 'عمل المهندس عز الدين خالد عبيد' }
+  },
   auth: {
     title: { en: 'CMS Access', ar: 'الوصول للوحة التحكم' },
     desc: { en: 'Enter password to unlock the dashboard', ar: 'أدخل كلمة السر لفتح لوحة التحكم' },

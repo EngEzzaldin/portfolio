@@ -1,4 +1,7 @@
 var _editExpIndex = -1;
+var _editSkillIndex = -1;
+var _editProjectIndex = -1;
+var _editRmIndex = -1;
 
 function renderCMSLists() {
   renderCMSSkills();
@@ -13,16 +16,31 @@ function renderCMSSkills() {
   list.innerHTML = d.skills.map((s, i) => `
     <div class="cms-skill-item">
       <span class="cms-item-name">${escapeHtml(s.name)} (${s.proficiency}%)</span>
-      <button class="cms-item-delete" data-skill-index="${i}">&times;</button>
+      <span>
+        <button class="cms-item-edit" data-skill-edit="${i}" title="Edit" style="background:none;border:none;color:var(--clr-accent);cursor:pointer;padding:2px 6px;font-size:0.8rem;">&#9998;</button>
+        <button class="cms-item-delete" data-skill-del="${i}">&times;</button>
+      </span>
     </div>
   `).join('');
-  list.querySelectorAll('.cms-item-delete').forEach(btn => {
+  list.querySelectorAll('[data-skill-del]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const idx = parseInt(btn.dataset.skillIndex);
+      const idx = parseInt(btn.dataset.skillDel);
       const d = AppState.getData();
       d.skills.splice(idx, 1);
       AppState.setData(d);
       renderAll();
+    });
+  });
+  list.querySelectorAll('[data-skill-edit]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.skillEdit);
+      const s = AppState.getData().skills[idx];
+      _editSkillIndex = idx;
+      document.getElementById('cmsSkillName').value = s.name;
+      document.getElementById('cmsSkillProf').value = s.proficiency;
+      document.getElementById('cmsSkillCat').value = s.category;
+      document.getElementById('cmsAddSkill').textContent = 'Update Skill';
+      document.getElementById('cmsAddSkill').scrollIntoView({ behavior: 'smooth' });
     });
   });
 }
@@ -33,16 +51,36 @@ function renderCMSProjects() {
   list.innerHTML = d.projects.map((p, i) => `
     <div class="cms-skill-item">
       <span class="cms-item-name">${escapeHtml(p.titleEn)}</span>
-      <button class="cms-item-delete" data-project-index="${i}">&times;</button>
+      <span>
+        <button class="cms-item-edit" data-proj-edit="${i}" title="Edit" style="background:none;border:none;color:var(--clr-accent);cursor:pointer;padding:2px 6px;font-size:0.8rem;">&#9998;</button>
+        <button class="cms-item-delete" data-proj-del="${i}">&times;</button>
+      </span>
     </div>
   `).join('');
-  list.querySelectorAll('.cms-item-delete').forEach(btn => {
+  list.querySelectorAll('[data-proj-del]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const idx = parseInt(btn.dataset.projectIndex);
+      const idx = parseInt(btn.dataset.projDel);
       const d = AppState.getData();
       d.projects.splice(idx, 1);
       AppState.setData(d);
       renderAll();
+    });
+  });
+  list.querySelectorAll('[data-proj-edit]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.projEdit);
+      const p = AppState.getData().projects[idx];
+      _editProjectIndex = idx;
+      document.getElementById('cmsProjTitleAr').value = p.titleAr;
+      document.getElementById('cmsProjTitleEn').value = p.titleEn;
+      document.getElementById('cmsProjDescAr').value = p.descAr;
+      document.getElementById('cmsProjDescEn').value = p.descEn;
+      document.getElementById('cmsProjTags').value = (p.tags || []).join(', ');
+      document.getElementById('cmsProjGlow').value = p.glow;
+      document.getElementById('cmsProjGithub').value = p.github;
+      document.getElementById('cmsProjDemo').value = p.demo;
+      document.getElementById('cmsAddProject').textContent = 'Update Project';
+      document.getElementById('cmsAddProject').scrollIntoView({ behavior: 'smooth' });
     });
   });
 }
@@ -105,12 +143,19 @@ function initCMS() {
       return;
     }
     const d = AppState.getData();
-    d.skills.push({ name, proficiency: prof, category: cat });
+    if (_editSkillIndex >= 0) {
+      d.skills[_editSkillIndex] = { name, proficiency: prof, category: cat };
+      _editSkillIndex = -1;
+      document.getElementById('cmsAddSkill').textContent = '+ Add Skill';
+      showToast('Skill updated!', 'success');
+    } else {
+      d.skills.push({ name, proficiency: prof, category: cat });
+      showToast('Skill added!', 'success');
+    }
     AppState.setData(d);
     document.getElementById('cmsSkillName').value = '';
     document.getElementById('cmsSkillProf').value = '';
     renderAll();
-    showToast('Skill added!', 'success');
   });
 
   document.getElementById('cmsAddProject').addEventListener('click', () => {
@@ -128,10 +173,21 @@ function initCMS() {
     }
     const tags = tagsStr ? tagsStr.split(',').map(t => t.trim()).filter(Boolean) : [];
     const d = AppState.getData();
-    d.projects.push({
-      id: 'proj-' + Date.now().toString(36),
-      titleAr, titleEn, descAr, descEn, tags, glow, github, demo
-    });
+    if (_editProjectIndex >= 0) {
+      d.projects[_editProjectIndex] = {
+        id: d.projects[_editProjectIndex].id,
+        titleAr, titleEn, descAr, descEn, tags, glow, github, demo
+      };
+      _editProjectIndex = -1;
+      document.getElementById('cmsAddProject').textContent = '+ Add Project';
+      showToast('Project updated!', 'success');
+    } else {
+      d.projects.push({
+        id: 'proj-' + Date.now().toString(36),
+        titleAr, titleEn, descAr, descEn, tags, glow, github, demo
+      });
+      showToast('Project added!', 'success');
+    }
     AppState.setData(d);
     document.getElementById('cmsProjTitleAr').value = '';
     document.getElementById('cmsProjTitleEn').value = '';
@@ -139,7 +195,6 @@ function initCMS() {
     document.getElementById('cmsProjDescEn').value = '';
     document.getElementById('cmsProjTags').value = '';
     renderAll();
-    showToast('Project added!', 'success');
   });
 
   document.getElementById('cmsAddExperience').addEventListener('click', () => {
@@ -327,17 +382,27 @@ function initCMS() {
       return;
     }
     const d = AppState.getData();
-    d.roadmap.push({
-      id: 'rm-' + Date.now().toString(36),
-      titleAr, titleEn, statusAr, statusEn, descAr, descEn
-    });
+    if (_editRmIndex >= 0) {
+      d.roadmap[_editRmIndex] = {
+        id: d.roadmap[_editRmIndex].id,
+        titleAr, titleEn, statusAr, statusEn, descAr, descEn
+      };
+      _editRmIndex = -1;
+      document.getElementById('cmsAddRoadmap').textContent = '+ Add Roadmap Item';
+      showToast('Roadmap item updated!', 'success');
+    } else {
+      d.roadmap.push({
+        id: 'rm-' + Date.now().toString(36),
+        titleAr, titleEn, statusAr, statusEn, descAr, descEn
+      });
+      showToast('Roadmap item added!', 'success');
+    }
     AppState.setData(d);
     document.getElementById('cmsRmTitleAr').value = '';
     document.getElementById('cmsRmTitleEn').value = '';
     document.getElementById('cmsRmDescAr').value = '';
     document.getElementById('cmsRmDescEn').value = '';
     renderAll();
-    showToast('Roadmap item added!', 'success');
   });
 }
 
@@ -348,7 +413,10 @@ function renderCMSRoadmap() {
   list.innerHTML = d.roadmap.map((item, i) => `
     <div class="cms-skill-item">
       <span class="cms-item-name">${escapeHtml(item.titleEn)} (${escapeHtml(item.statusEn)})</span>
-      <button class="cms-item-delete" data-rm-del="${i}">&times;</button>
+      <span>
+        <button class="cms-item-edit" data-rm-edit="${i}" title="Edit" style="background:none;border:none;color:var(--clr-accent);cursor:pointer;padding:2px 6px;font-size:0.8rem;">&#9998;</button>
+        <button class="cms-item-delete" data-rm-del="${i}">&times;</button>
+      </span>
     </div>
   `).join('');
   list.querySelectorAll('[data-rm-del]').forEach(btn => {
@@ -358,6 +426,21 @@ function renderCMSRoadmap() {
       d.roadmap.splice(idx, 1);
       AppState.setData(d);
       renderAll();
+    });
+  });
+  list.querySelectorAll('[data-rm-edit]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.rmEdit);
+      const item = AppState.getData().roadmap[idx];
+      _editRmIndex = idx;
+      document.getElementById('cmsRmTitleAr').value = item.titleAr;
+      document.getElementById('cmsRmTitleEn').value = item.titleEn;
+      document.getElementById('cmsRmStatusAr').value = item.statusAr;
+      document.getElementById('cmsRmStatusEn').value = item.statusEn;
+      document.getElementById('cmsRmDescAr').value = item.descAr;
+      document.getElementById('cmsRmDescEn').value = item.descEn;
+      document.getElementById('cmsAddRoadmap').textContent = 'Update Roadmap Item';
+      document.getElementById('cmsAddRoadmap').scrollIntoView({ behavior: 'smooth' });
     });
   });
 }

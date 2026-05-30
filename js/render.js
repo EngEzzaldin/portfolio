@@ -196,6 +196,8 @@ function renderAll() {
   renderInbox();
   renderCMSFields();
   applyLang();
+  var fy = document.getElementById('footerYear');
+  if (fy) fy.textContent = new Date().getFullYear();
 }
 
 function observeAnimations() {
