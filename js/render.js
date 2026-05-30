@@ -106,20 +106,22 @@ function renderContact() {
   const d = AppState.getData();
   const lang = AppState.getLang();
   setText('contactEmail', d.contact.email);
-  setText('contactPhone', d.contact.phone || '');
   setText('contactLocation', lang === 'ar' ? d.contact.locationAr : d.contact.locationEn);
-  setAttr('contactGithub', 'textContent', d.contact.github);
-  setAttr('contactGithub', 'href', d.contact.github);
-  setAttr('contactLinkedin', 'textContent', d.contact.linkedin);
-  setAttr('contactLinkedin', 'href', d.contact.linkedin);
-  setAttr('contactWhatsapp', 'textContent', d.contact.whatsapp ? d.contact.whatsapp.replace(/^https?:\/\//, '') : '');
-  setAttr('contactWhatsapp', 'href', d.contact.whatsapp || '#');
-  setAttr('contactTwitter', 'textContent', d.contact.twitter ? d.contact.twitter.replace(/^https?:\/\//, '') : '');
-  setAttr('contactTwitter', 'href', d.contact.twitter || '#');
-  setAttr('contactTelegram', 'textContent', d.contact.telegram ? d.contact.telegram.replace(/^https?:\/\//, '') : '');
-  setAttr('contactTelegram', 'href', d.contact.telegram || '#');
-  setAttr('contactWebsite', 'textContent', d.contact.website ? d.contact.website.replace(/^https?:\/\//, '') : '');
-  setAttr('contactWebsite', 'href', d.contact.website || '#');
+  var linksEl = document.getElementById('contactLinks');
+  if (linksEl) {
+    linksEl.innerHTML = (d.contact.links || []).map(function (link) {
+      var isExternal = link.url && (link.url.indexOf('http') === 0 || link.url.indexOf('tel:') === 0);
+      var displayUrl = link.url ? link.url.replace(/^https?:\/\//, '').replace(/^tel:/, '') : '';
+      return '<div class="contact-info-item">' +
+        '<div class="contact-info-icon">' + (link.icon || '🔗') + '</div>' +
+        '<div class="contact-info-text">' +
+        '<strong>' + escapeHtml(link.label) + '</strong>' +
+        (isExternal
+          ? '<a href="' + escapeHtml(link.url) + '" target="_blank" rel="noopener">' + escapeHtml(displayUrl) + '</a>'
+          : '<span>' + escapeHtml(displayUrl) + '</span>') +
+        '</div></div>';
+    }).join('');
+  }
 }
 
 function setText(id, val) {
@@ -184,20 +186,6 @@ function renderCMSFields() {
   if (cla) cla.value = d.contact.locationAr;
   var cle = document.getElementById('cmsContactLocEn');
   if (cle) cle.value = d.contact.locationEn;
-  var cg = document.getElementById('cmsContactGithub');
-  if (cg) cg.value = d.contact.github;
-  var cl = document.getElementById('cmsContactLinkedin');
-  if (cl) cl.value = d.contact.linkedin;
-  var cp = document.getElementById('cmsContactPhone');
-  if (cp) cp.value = d.contact.phone || '';
-  var cw = document.getElementById('cmsContactWhatsapp');
-  if (cw) cw.value = d.contact.whatsapp || '';
-  var ctx = document.getElementById('cmsContactTwitter');
-  if (ctx) ctx.value = d.contact.twitter || '';
-  var ctg = document.getElementById('cmsContactTelegram');
-  if (ctg) ctg.value = d.contact.telegram || '';
-  var cws = document.getElementById('cmsContactWebsite');
-  if (cws) cws.value = d.contact.website || '';
   var cu = document.getElementById('cmsChangeUser');
   if (cu) cu.value = localStorage.getItem('_portfolio_user') || 'admin';
 }

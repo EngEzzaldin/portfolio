@@ -8,6 +8,7 @@ function renderCMSLists() {
   renderCMSProjects();
   renderCMSExperience();
   renderCMSRoadmap();
+  renderCMSContactLinks();
 }
 
 function renderCMSSkills() {
@@ -313,8 +314,7 @@ function initCMS() {
     'cmsSubtitleAr', 'cmsSubtitleEn', 'cmsStatProjects', 'cmsStatExperience',
     'cmsStatModels', 'cmsStatCommits', 'cmsBioAr', 'cmsBioEn',
     'cmsDegreeAr', 'cmsDegreeEn', 'cmsFocusAr', 'cmsFocusEn',
-    'cmsContactEmail', 'cmsContactLocAr', 'cmsContactLocEn', 'cmsContactGithub', 'cmsContactLinkedin',
-    'cmsContactPhone', 'cmsContactWhatsapp', 'cmsContactTwitter', 'cmsContactTelegram', 'cmsContactWebsite'];
+    'cmsContactEmail', 'cmsContactLocAr', 'cmsContactLocEn'];
 
   basicsFields.forEach(id => {
     document.getElementById(id).addEventListener('input', () => {
@@ -340,13 +340,6 @@ function initCMS() {
         case 'cmsContactEmail': d.contact.email = val; break;
         case 'cmsContactLocAr': d.contact.locationAr = val; break;
         case 'cmsContactLocEn': d.contact.locationEn = val; break;
-        case 'cmsContactGithub': d.contact.github = val; break;
-        case 'cmsContactLinkedin': d.contact.linkedin = val; break;
-        case 'cmsContactPhone': d.contact.phone = val; break;
-        case 'cmsContactWhatsapp': d.contact.whatsapp = val; break;
-        case 'cmsContactTwitter': d.contact.twitter = val; break;
-        case 'cmsContactTelegram': d.contact.telegram = val; break;
-        case 'cmsContactWebsite': d.contact.website = val; break;
       }
       AppState.save();
       renderHero();
@@ -411,6 +404,25 @@ function initCMS() {
     document.getElementById('cmsRmDescEn').value = '';
     renderAll();
   });
+
+  document.getElementById('cmsAddContactLink').addEventListener('click', () => {
+    const label = document.getElementById('cmsContactLabel').value.trim();
+    const url = document.getElementById('cmsContactLinkUrl').value.trim();
+    const icon = document.getElementById('cmsContactIcon').value.trim() || '🔗';
+    if (!label || !url) {
+      showToast('Please fill label and URL', 'error');
+      return;
+    }
+    const d = AppState.getData();
+    if (!d.contact.links) d.contact.links = [];
+    d.contact.links.push({ label, url, icon });
+    AppState.setData(d);
+    document.getElementById('cmsContactLabel').value = '';
+    document.getElementById('cmsContactLinkUrl').value = '';
+    document.getElementById('cmsContactIcon').value = '';
+    renderAll();
+    showToast('Contact link added!', 'success');
+  });
 }
 
 function renderCMSRoadmap() {
@@ -448,6 +460,28 @@ function renderCMSRoadmap() {
       document.getElementById('cmsRmDescEn').value = item.descEn;
       document.getElementById('cmsAddRoadmap').textContent = 'Update Roadmap Item';
       document.getElementById('cmsAddRoadmap').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+}
+
+function renderCMSContactLinks() {
+  const d = AppState.getData();
+  const list = document.getElementById('cmsContactLinksList');
+  if (!list) return;
+  list.innerHTML = (d.contact.links || []).map((link, i) => `
+    <div class="cms-skill-item">
+      <span class="cms-item-name">${escapeHtml(link.icon || '🔗')} ${escapeHtml(link.label)}</span>
+      <button class="cms-item-delete" data-contact-del="${i}">&times;</button>
+    </div>
+  `).join('');
+  list.querySelectorAll('[data-contact-del]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.contactDel);
+      const d = AppState.getData();
+      if (!d.contact.links) d.contact.links = [];
+      d.contact.links.splice(idx, 1);
+      AppState.setData(d);
+      renderAll();
     });
   });
 }

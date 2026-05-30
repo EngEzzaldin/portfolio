@@ -157,41 +157,7 @@
       </div>
       <div class="contact-wrapper">
         <div class="contact-info animate-on-view">
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📞</div>
-            <div class="contact-info-text">
-              <strong data-i18n="contact.phone">Phone</strong>
-              <span id="contactPhone">+967 777 777 777</span>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">💬</div>
-            <div class="contact-info-text">
-              <strong>WhatsApp</strong>
-              <a href="https://wa.me/967777777777" target="_blank" rel="noopener" id="contactWhatsapp">wa.me/967777777777</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">🐦</div>
-            <div class="contact-info-text">
-              <strong>X / Twitter</strong>
-              <a href="https://twitter.com/kzaldyn" target="_blank" rel="noopener" id="contactTwitter">twitter.com/kzaldyn</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">✈</div>
-            <div class="contact-info-text">
-              <strong>Telegram</strong>
-              <a href="https://t.me/kzaldyn" target="_blank" rel="noopener" id="contactTelegram">t.me/kzaldyn</a>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">🌐</div>
-            <div class="contact-info-text">
-              <strong data-i18n="contact.website">Website</strong>
-              <a href="https://portfolio-virid-three-58.vercel.app" target="_blank" rel="noopener" id="contactWebsite">portfolio-virid-three-58.vercel.app</a>
-            </div>
-          </div>
+          <div id="contactLinks"></div>
           <div class="contact-info-item">
             <div class="contact-info-icon">✉</div>
             <div class="contact-info-text">
@@ -509,40 +475,25 @@
             <input type="text" id="cmsContactLocEn" value="Sana'a, Yemen">
           </div>
         </div>
+        <div class="cms-sub-label" data-i18n="cms.currentItems">Current Contact Links:</div>
+        <div id="cmsContactLinksList"></div>
+        <div class="cms-add-separator"></div>
+        <div class="cms-sub-label">Add New Contact Link:</div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.contactLabel">Label</label>
+            <input type="text" id="cmsContactLabel" placeholder="e.g. YouTube">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.contactIcon">Icon (emoji)</label>
+            <input type="text" id="cmsContactIcon" placeholder="e.g. ▶">
+          </div>
+        </div>
         <div class="cms-field">
-          <label data-i18n="cms.contactPhone">Phone</label>
-          <input type="text" id="cmsContactPhone" value="+967 777 777 777">
+          <label data-i18n="cms.contactLinkUrl">URL</label>
+          <input type="url" id="cmsContactLinkUrl" placeholder="https://...">
         </div>
-        <div class="cms-field-row">
-          <div class="cms-field">
-            <label data-i18n="cms.contactWhatsapp">WhatsApp URL</label>
-            <input type="url" id="cmsContactWhatsapp" value="https://wa.me/967777777777">
-          </div>
-          <div class="cms-field">
-            <label data-i18n="cms.contactTwitter">X / Twitter URL</label>
-            <input type="url" id="cmsContactTwitter" value="https://twitter.com/kzaldyn">
-          </div>
-        </div>
-        <div class="cms-field-row">
-          <div class="cms-field">
-            <label data-i18n="cms.contactTelegram">Telegram URL</label>
-            <input type="url" id="cmsContactTelegram" value="https://t.me/kzaldyn">
-          </div>
-          <div class="cms-field">
-            <label data-i18n="cms.contactWebsite">Website URL</label>
-            <input type="url" id="cmsContactWebsite" value="https://portfolio-virid-three-58.vercel.app">
-          </div>
-        </div>
-        <div class="cms-field-row">
-          <div class="cms-field">
-            <label data-i18n="cms.contactGithub">GitHub URL</label>
-            <input type="url" id="cmsContactGithub" value="https://github.com/kzaldyn">
-          </div>
-          <div class="cms-field">
-            <label data-i18n="cms.contactLinkedin">LinkedIn URL</label>
-            <input type="url" id="cmsContactLinkedin" value="https://linkedin.com/in/kzaldyn">
-          </div>
-        </div>
+        <button class="cms-btn cms-btn-primary" id="cmsAddContactLink" data-i18n="cms.addContactLink">+ Add Link</button>
       </div>
 
       <!-- Roadmap -->

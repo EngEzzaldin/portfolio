@@ -129,14 +129,16 @@ const INITIAL_DATA = {
   ],
   contact: {
     email: 'kzaldyn67@gmail.com',
-    phone: '+967 777 777 777',
-    whatsapp: 'https://wa.me/967777777777',
-    twitter: 'https://twitter.com/kzaldyn',
-    telegram: 'https://t.me/kzaldyn',
-    website: 'https://portfolio-virid-three-58.vercel.app',
     locationAr: 'صنعاء، اليمن',
     locationEn: 'Sana\'a, Yemen',
-    github: 'https://github.com/kzaldyn',
-    linkedin: 'https://linkedin.com/in/kzaldyn'
+    links: [
+      { label: 'GitHub', url: 'https://github.com/kzaldyn', icon: '💻' },
+      { label: 'LinkedIn', url: 'https://linkedin.com/in/kzaldyn', icon: '🔗' },
+      { label: 'Phone', url: 'tel:+967777777777', icon: '📞' },
+      { label: 'WhatsApp', url: 'https://wa.me/967777777777', icon: '💬' },
+      { label: 'X / Twitter', url: 'https://twitter.com/kzaldyn', icon: '🐦' },
+      { label: 'Telegram', url: 'https://t.me/kzaldyn', icon: '✈' },
+      { label: 'Website', url: 'https://portfolio-virid-three-58.vercel.app', icon: '🌐' }
+    ]
   }
 };

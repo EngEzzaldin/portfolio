@@ -130,7 +130,11 @@ const i18n = {
     contactWhatsapp: { en: 'WhatsApp URL', ar: 'رابط واتساب' },
     contactTwitter: { en: 'X / Twitter URL', ar: 'رابط X / تويتر' },
     contactTelegram: { en: 'Telegram URL', ar: 'رابط تيليغرام' },
-    contactWebsite: { en: 'Website URL', ar: 'رابط الموقع' }
+    contactWebsite: { en: 'Website URL', ar: 'رابط الموقع' },
+    contactLabel: { en: 'Label', ar: 'الاسم' },
+    contactIcon: { en: 'Icon (emoji)', ar: 'الأيقونة (رمز) ' },
+    contactLinkUrl: { en: 'URL', ar: 'الرابط' },
+    addContactLink: { en: '+ Add Link', ar: '+ إضافة رابط' }
   },
   footer: {
     credit: { en: 'Work of Engineer Ezzeddin Khaled Obaid', ar: 'عمل المهندس عز الدين خالد عبيد' }
