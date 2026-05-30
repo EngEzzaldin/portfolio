@@ -119,7 +119,13 @@ const i18n = {
     rmStatusAr: { en: 'Status (Arabic)', ar: 'الحالة (عربي)' },
     rmStatusEn: { en: 'Status (English)', ar: 'الحالة (إنجليزي)' },
     rmDescAr: { en: 'Description (Arabic)', ar: 'الوصف (عربي)' },
-    rmDescEn: { en: 'Description (English)', ar: 'الوصف (إنجليزي)' }
+    rmDescEn: { en: 'Description (English)', ar: 'الوصف (إنجليزي)' },
+    contact: { en: 'Contact Info', ar: 'معلومات التواصل' },
+    contactEmail: { en: 'Email', ar: 'البريد الإلكتروني' },
+    contactLocAr: { en: 'Location (Arabic)', ar: 'الموقع (عربي)' },
+    contactLocEn: { en: 'Location (English)', ar: 'الموقع (إنجليزي)' },
+    contactGithub: { en: 'GitHub URL', ar: 'رابط GitHub' },
+    contactLinkedin: { en: 'LinkedIn URL', ar: 'رابط LinkedIn' }
   },
   auth: {
     title: { en: 'CMS Access', ar: 'الوصول للوحة التحكم' },

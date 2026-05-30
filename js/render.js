@@ -159,6 +159,16 @@ function renderCMSFields() {
   document.getElementById('cmsDegreeEn').value = d.about.degreeEn;
   document.getElementById('cmsFocusAr').value = d.about.focusAr;
   document.getElementById('cmsFocusEn').value = d.about.focusEn;
+  var ce = document.getElementById('cmsContactEmail');
+  if (ce) ce.value = d.contact.email;
+  var cla = document.getElementById('cmsContactLocAr');
+  if (cla) cla.value = d.contact.locationAr;
+  var cle = document.getElementById('cmsContactLocEn');
+  if (cle) cle.value = d.contact.locationEn;
+  var cg = document.getElementById('cmsContactGithub');
+  if (cg) cg.value = d.contact.github;
+  var cl = document.getElementById('cmsContactLinkedin');
+  if (cl) cl.value = d.contact.linkedin;
 }
 
 function applyLang() {

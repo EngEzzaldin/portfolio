@@ -257,7 +257,8 @@ function initCMS() {
   const basicsFields = ['cmsNameAr', 'cmsNameEn', 'cmsTitleAr', 'cmsTitleEn',
     'cmsSubtitleAr', 'cmsSubtitleEn', 'cmsStatProjects', 'cmsStatExperience',
     'cmsStatModels', 'cmsStatCommits', 'cmsBioAr', 'cmsBioEn',
-    'cmsDegreeAr', 'cmsDegreeEn', 'cmsFocusAr', 'cmsFocusEn'];
+    'cmsDegreeAr', 'cmsDegreeEn', 'cmsFocusAr', 'cmsFocusEn',
+    'cmsContactEmail', 'cmsContactLocAr', 'cmsContactLocEn', 'cmsContactGithub', 'cmsContactLinkedin'];
 
   basicsFields.forEach(id => {
     document.getElementById(id).addEventListener('input', () => {
@@ -280,10 +281,16 @@ function initCMS() {
         case 'cmsDegreeEn': d.about.degreeEn = val; break;
         case 'cmsFocusAr': d.about.focusAr = val; break;
         case 'cmsFocusEn': d.about.focusEn = val; break;
+        case 'cmsContactEmail': d.contact.email = val; break;
+        case 'cmsContactLocAr': d.contact.locationAr = val; break;
+        case 'cmsContactLocEn': d.contact.locationEn = val; break;
+        case 'cmsContactGithub': d.contact.github = val; break;
+        case 'cmsContactLinkedin': d.contact.linkedin = val; break;
       }
       AppState.save();
       renderHero();
       renderAbout();
+      renderContact();
       AppState.applyLang();
     });
   });
