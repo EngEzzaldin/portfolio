@@ -122,19 +122,25 @@ const i18n = {
     rmDescEn: { en: 'Description (English)', ar: 'الوصف (إنجليزي)' },
     contact: { en: 'Contact Info', ar: 'معلومات التواصل' },
     contactEmail: { en: 'Email', ar: 'البريد الإلكتروني' },
+    contactPhone: { en: 'Phone', ar: 'رقم الهاتف' },
     contactLocAr: { en: 'Location (Arabic)', ar: 'الموقع (عربي)' },
     contactLocEn: { en: 'Location (English)', ar: 'الموقع (إنجليزي)' },
     contactGithub: { en: 'GitHub URL', ar: 'رابط GitHub' },
-    contactLinkedin: { en: 'LinkedIn URL', ar: 'رابط LinkedIn' }
+    contactLinkedin: { en: 'LinkedIn URL', ar: 'رابط LinkedIn' },
+    contactWhatsapp: { en: 'WhatsApp URL', ar: 'رابط واتساب' },
+    contactTwitter: { en: 'X / Twitter URL', ar: 'رابط X / تويتر' },
+    contactTelegram: { en: 'Telegram URL', ar: 'رابط تيليغرام' },
+    contactWebsite: { en: 'Website URL', ar: 'رابط الموقع' }
   },
   footer: {
     credit: { en: 'Work of Engineer Ezzeddin Khaled Obaid', ar: 'عمل المهندس عز الدين خالد عبيد' }
   },
   auth: {
     title: { en: 'CMS Access', ar: 'الوصول للوحة التحكم' },
-    desc: { en: 'Enter password to unlock the dashboard', ar: 'أدخل كلمة السر لفتح لوحة التحكم' },
-    placeholder: { en: 'Enter password...', ar: 'أدخل كلمة السر...' },
-    error: { en: 'Incorrect password. Try again.', ar: 'كلمة السر خطأ. حاول مرة أخرى.' },
+    desc: { en: 'Enter credentials to unlock the dashboard', ar: 'أدخل بيانات الدخول لفتح لوحة التحكم' },
+    usernamePlaceholder: { en: 'Username', ar: 'اسم المستخدم' },
+    placeholder: { en: 'Password...', ar: 'كلمة السر...' },
+    error: { en: 'Incorrect credentials. Try again.', ar: 'بيانات الدخول غير صحيحة. حاول مرة أخرى.' },
     unlock: { en: 'Unlock', ar: 'فتح' },
     cancel: { en: 'Cancel', ar: 'إلغاء' }
   }

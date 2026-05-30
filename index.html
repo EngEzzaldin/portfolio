@@ -158,6 +158,41 @@
       <div class="contact-wrapper">
         <div class="contact-info animate-on-view">
           <div class="contact-info-item">
+            <div class="contact-info-icon">📞</div>
+            <div class="contact-info-text">
+              <strong data-i18n="contact.phone">Phone</strong>
+              <span id="contactPhone">+967 777 777 777</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">💬</div>
+            <div class="contact-info-text">
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/967777777777" target="_blank" rel="noopener" id="contactWhatsapp">wa.me/967777777777</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🐦</div>
+            <div class="contact-info-text">
+              <strong>X / Twitter</strong>
+              <a href="https://twitter.com/kzaldyn" target="_blank" rel="noopener" id="contactTwitter">twitter.com/kzaldyn</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">✈</div>
+            <div class="contact-info-text">
+              <strong>Telegram</strong>
+              <a href="https://t.me/kzaldyn" target="_blank" rel="noopener" id="contactTelegram">t.me/kzaldyn</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🌐</div>
+            <div class="contact-info-text">
+              <strong data-i18n="contact.website">Website</strong>
+              <a href="https://portfolio-virid-three-58.vercel.app" target="_blank" rel="noopener" id="contactWebsite">portfolio-virid-three-58.vercel.app</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
             <div class="contact-info-icon">✉</div>
             <div class="contact-info-text">
               <strong data-i18n="contact.email">Email</strong>
@@ -474,6 +509,30 @@
             <input type="text" id="cmsContactLocEn" value="Sana'a, Yemen">
           </div>
         </div>
+        <div class="cms-field">
+          <label data-i18n="cms.contactPhone">Phone</label>
+          <input type="text" id="cmsContactPhone" value="+967 777 777 777">
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.contactWhatsapp">WhatsApp URL</label>
+            <input type="url" id="cmsContactWhatsapp" value="https://wa.me/967777777777">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.contactTwitter">X / Twitter URL</label>
+            <input type="url" id="cmsContactTwitter" value="https://twitter.com/kzaldyn">
+          </div>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.contactTelegram">Telegram URL</label>
+            <input type="url" id="cmsContactTelegram" value="https://t.me/kzaldyn">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.contactWebsite">Website URL</label>
+            <input type="url" id="cmsContactWebsite" value="https://portfolio-virid-three-58.vercel.app">
+          </div>
+        </div>
         <div class="cms-field-row">
           <div class="cms-field">
             <label data-i18n="cms.contactGithub">GitHub URL</label>
@@ -538,6 +597,10 @@
       <div class="cms-section">
         <div class="cms-section-title" data-i18n="cms.changePwd">Change Password</div>
         <div class="cms-field">
+          <label data-i18n="auth.usernamePlaceholder">Username</label>
+          <input type="text" id="cmsChangeUser" value="admin" placeholder="Username">
+        </div>
+        <div class="cms-field">
           <label data-i18n="cms.currentPwd">Current Password</label>
           <input type="password" id="cmsCurrentPwd" placeholder="Enter current password...">
         </div>
@@ -570,15 +633,18 @@
   <div class="auth-overlay" id="authOverlay"></div>
 
   <!-- AUTH MODAL -->
-  <div class="auth-modal" id="authModal" role="dialog" aria-label="Authentication">
+   <div class="auth-modal" id="authModal" role="dialog" aria-label="Authentication">
     <div class="auth-modal-content">
       <div class="auth-modal-icon">🔒</div>
       <div class="auth-modal-title" data-i18n="auth.title">CMS Access</div>
-      <div class="auth-modal-desc" data-i18n="auth.desc">Enter password to unlock the dashboard</div>
+      <div class="auth-modal-desc" data-i18n="auth.desc">Enter credentials to unlock the dashboard</div>
       <div class="auth-field">
-        <input type="password" id="authPassword" placeholder="Enter password..." data-i18n-placeholder="auth.placeholder">
+        <input type="text" id="authUsername" placeholder="Username" data-i18n-placeholder="auth.usernamePlaceholder">
       </div>
-      <div class="auth-error" id="authError" data-i18n="auth.error">Incorrect password. Try again.</div>
+      <div class="auth-field">
+        <input type="password" id="authPassword" placeholder="Password..." data-i18n-placeholder="auth.placeholder">
+      </div>
+      <div class="auth-error" id="authError" data-i18n="auth.error">Incorrect credentials. Try again.</div>
       <div class="auth-actions">
         <button class="btn btn-primary" id="authSubmit" data-i18n="auth.unlock">Unlock</button>
         <button class="btn btn-secondary" id="authCancel" data-i18n="auth.cancel">Cancel</button>

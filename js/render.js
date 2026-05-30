@@ -105,12 +105,31 @@ function renderRoadmap() {
 function renderContact() {
   const d = AppState.getData();
   const lang = AppState.getLang();
-  document.getElementById('contactEmail').textContent = d.contact.email;
-  document.getElementById('contactLocation').textContent = lang === 'ar' ? d.contact.locationAr : d.contact.locationEn;
-  document.getElementById('contactGithub').textContent = d.contact.github;
-  document.getElementById('contactGithub').href = d.contact.github;
-  document.getElementById('contactLinkedin').textContent = d.contact.linkedin;
-  document.getElementById('contactLinkedin').href = d.contact.linkedin;
+  setText('contactEmail', d.contact.email);
+  setText('contactPhone', d.contact.phone || '');
+  setText('contactLocation', lang === 'ar' ? d.contact.locationAr : d.contact.locationEn);
+  setAttr('contactGithub', 'textContent', d.contact.github);
+  setAttr('contactGithub', 'href', d.contact.github);
+  setAttr('contactLinkedin', 'textContent', d.contact.linkedin);
+  setAttr('contactLinkedin', 'href', d.contact.linkedin);
+  setAttr('contactWhatsapp', 'textContent', d.contact.whatsapp ? d.contact.whatsapp.replace(/^https?:\/\//, '') : '');
+  setAttr('contactWhatsapp', 'href', d.contact.whatsapp || '#');
+  setAttr('contactTwitter', 'textContent', d.contact.twitter ? d.contact.twitter.replace(/^https?:\/\//, '') : '');
+  setAttr('contactTwitter', 'href', d.contact.twitter || '#');
+  setAttr('contactTelegram', 'textContent', d.contact.telegram ? d.contact.telegram.replace(/^https?:\/\//, '') : '');
+  setAttr('contactTelegram', 'href', d.contact.telegram || '#');
+  setAttr('contactWebsite', 'textContent', d.contact.website ? d.contact.website.replace(/^https?:\/\//, '') : '');
+  setAttr('contactWebsite', 'href', d.contact.website || '#');
+}
+
+function setText(id, val) {
+  var el = document.getElementById(id);
+  if (el) el.textContent = val;
+}
+
+function setAttr(id, attr, val) {
+  var el = document.getElementById(id);
+  if (el) el[attr] = val;
 }
 
 function renderInbox() {
@@ -169,6 +188,18 @@ function renderCMSFields() {
   if (cg) cg.value = d.contact.github;
   var cl = document.getElementById('cmsContactLinkedin');
   if (cl) cl.value = d.contact.linkedin;
+  var cp = document.getElementById('cmsContactPhone');
+  if (cp) cp.value = d.contact.phone || '';
+  var cw = document.getElementById('cmsContactWhatsapp');
+  if (cw) cw.value = d.contact.whatsapp || '';
+  var ctx = document.getElementById('cmsContactTwitter');
+  if (ctx) ctx.value = d.contact.twitter || '';
+  var ctg = document.getElementById('cmsContactTelegram');
+  if (ctg) ctg.value = d.contact.telegram || '';
+  var cws = document.getElementById('cmsContactWebsite');
+  if (cws) cws.value = d.contact.website || '';
+  var cu = document.getElementById('cmsChangeUser');
+  if (cu) cu.value = localStorage.getItem('_portfolio_user') || 'admin';
 }
 
 function applyLang() {

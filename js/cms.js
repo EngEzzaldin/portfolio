@@ -313,7 +313,8 @@ function initCMS() {
     'cmsSubtitleAr', 'cmsSubtitleEn', 'cmsStatProjects', 'cmsStatExperience',
     'cmsStatModels', 'cmsStatCommits', 'cmsBioAr', 'cmsBioEn',
     'cmsDegreeAr', 'cmsDegreeEn', 'cmsFocusAr', 'cmsFocusEn',
-    'cmsContactEmail', 'cmsContactLocAr', 'cmsContactLocEn', 'cmsContactGithub', 'cmsContactLinkedin'];
+    'cmsContactEmail', 'cmsContactLocAr', 'cmsContactLocEn', 'cmsContactGithub', 'cmsContactLinkedin',
+    'cmsContactPhone', 'cmsContactWhatsapp', 'cmsContactTwitter', 'cmsContactTelegram', 'cmsContactWebsite'];
 
   basicsFields.forEach(id => {
     document.getElementById(id).addEventListener('input', () => {
@@ -341,6 +342,11 @@ function initCMS() {
         case 'cmsContactLocEn': d.contact.locationEn = val; break;
         case 'cmsContactGithub': d.contact.github = val; break;
         case 'cmsContactLinkedin': d.contact.linkedin = val; break;
+        case 'cmsContactPhone': d.contact.phone = val; break;
+        case 'cmsContactWhatsapp': d.contact.whatsapp = val; break;
+        case 'cmsContactTwitter': d.contact.twitter = val; break;
+        case 'cmsContactTelegram': d.contact.telegram = val; break;
+        case 'cmsContactWebsite': d.contact.website = val; break;
       }
       AppState.save();
       renderHero();
@@ -350,23 +356,24 @@ function initCMS() {
     });
   });
 
-  document.getElementById('cmsChangePwd').addEventListener('click', () => {
-    const oldPwd = document.getElementById('cmsCurrentPwd').value;
-    const newPwd = document.getElementById('cmsNewPwd').value;
-    if (!oldPwd || !newPwd) {
-      showToast('Please fill both fields', 'error');
+  document.getElementById('cmsChangePwd').addEventListener('click', function () {
+    var username = document.getElementById('cmsChangeUser').value;
+    var oldPwd = document.getElementById('cmsCurrentPwd').value;
+    var newPwd = document.getElementById('cmsNewPwd').value;
+    if (!username || !oldPwd || !newPwd) {
+      showToast('Please fill all fields', 'error');
       return;
     }
     if (newPwd.length < 4) {
       showToast('Password must be at least 4 characters', 'error');
       return;
     }
-    if (AUTH.changePassword(oldPwd, newPwd)) {
+    if (AUTH.changePassword(username, oldPwd, newPwd)) {
       document.getElementById('cmsCurrentPwd').value = '';
       document.getElementById('cmsNewPwd').value = '';
-      showToast('Password updated successfully!', 'success');
+      showToast('Credentials updated successfully!', 'success');
     } else {
-      showToast('Current password is incorrect', 'error');
+      showToast('Current username or password is incorrect', 'error');
     }
   });
 

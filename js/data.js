@@ -129,6 +129,11 @@ const INITIAL_DATA = {
   ],
   contact: {
     email: 'kzaldyn67@gmail.com',
+    phone: '+967 777 777 777',
+    whatsapp: 'https://wa.me/967777777777',
+    twitter: 'https://twitter.com/kzaldyn',
+    telegram: 'https://t.me/kzaldyn',
+    website: 'https://portfolio-virid-three-58.vercel.app',
     locationAr: 'صنعاء، اليمن',
     locationEn: 'Sana\'a, Yemen',
     github: 'https://github.com/kzaldyn',
