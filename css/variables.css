@@ -1,0 +1,44 @@
+:root {
+  --clr-bg: #000000;
+  --clr-surface: #060607;
+  --clr-surface-hover: #0a0a0c;
+  --clr-border: #1f1f22;
+  --clr-border-hover: #2a2a2e;
+  --clr-text: #f8fafc;
+  --clr-text-secondary: #94a3b8;
+  --clr-text-muted: #64748b;
+  --clr-accent: #6366f1;
+  --clr-success: #10b981;
+  --clr-error: #ef4444;
+
+  --glow-indigo: #6366f1;
+  --glow-cyan: #06b6d4;
+  --glow-emerald: #10b981;
+  --glow-violet: #8b5cf6;
+  --glow-amber: #f59e0b;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 80px;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.8rem;
+  --text-base: 0.9rem;
+  --text-md: 1rem;
+  --text-lg: 1.15rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 2rem;
+  --text-3xl: 3rem;
+
+  --font-arabic: 'Segoe UI', 'Noto Naskh Arabic', 'Tahoma', sans-serif;
+  --font-english: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

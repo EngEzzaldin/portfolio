@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="eng. Ezzaldin Khaild Obaid - Software Engineer & AI Specialist Portfolio">
+  <title>eng. Ezzaldin Khaild Obaid | Software Engineer & AI Specialist</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/cms.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar-brand"><span>EZ</span>DEV</div>
+      <div class="navbar-links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="nav-controls">
+        <button class="btn-icon" id="langToggle" aria-label="Toggle language">
+          <span id="langLabel">AR</span>
+        </button>
+        <button class="btn-icon" id="cmsToggle" aria-label="Open CMS dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 id="heroName">Ezzeddin Khaled Obeid</h1>
+          <div class="hero-title" id="heroTitle">Software Engineer & AI Specialist</div>
+          <div class="hero-subtitle" id="heroSubtitle">Bridging the gap between high-performance systems and intelligent deep learning architectures.</div>
+        </div>
+        <div class="hero-stats" id="heroStats">
+          <div class="stat-card fade-in-up stagger-1">
+            <div class="stat-number" id="statProjects">12+</div>
+            <div class="stat-label" data-i18n="stats.projects">Projects Completed</div>
+          </div>
+          <div class="stat-card fade-in-up stagger-2">
+            <div class="stat-number" id="statExperience">4+</div>
+            <div class="stat-label" data-i18n="stats.experience">Years Experience</div>
+          </div>
+          <div class="stat-card fade-in-up stagger-3">
+            <div class="stat-number" id="statModels">8+</div>
+            <div class="stat-label" data-i18n="stats.models">AI Models</div>
+          </div>
+          <div class="stat-card fade-in-up stagger-4">
+            <div class="stat-number" id="statCommits">140</div>
+            <div class="stat-label" data-i18n="stats.commits">Commits</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header animate-on-view">
+        <div class="section-title" data-i18n="about.title">About & Credentials</div>
+        <div class="section-subtitle" data-i18n="about.subtitle">Background & Academic Focus</div>
+      </div>
+      <div class="about-grid">
+        <div class="about-bio animate-on-view">
+          <p id="aboutBio">I am a dedicated Software Engineer holding a Bachelor's degree in Information Technology (IT)...</p>
+        </div>
+        <div class="about-credentials">
+          <div class="credential-card animate-on-view stagger-1">
+            <div class="credential-icon">🎓</div>
+            <div class="credential-label" data-i18n="about.degree">Academic Degree</div>
+            <div class="credential-value" id="aboutDegree">Bachelor of Information Technology (IT)</div>
+          </div>
+          <div class="credential-card animate-on-view stagger-2">
+            <div class="credential-icon">🔬</div>
+            <div class="credential-label" data-i18n="about.focus">Technical Focus</div>
+            <div class="credential-value" id="aboutFocus">Computer Vision & Advanced RAG Systems</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header animate-on-view">
+        <div class="section-title" data-i18n="skills.title">Technical Mastery</div>
+        <div class="section-subtitle" data-i18n="skills.subtitle">Bespoke Tech Stack & Proficiency</div>
+      </div>
+      <div class="tech-controls animate-on-view">
+        <div class="tech-filter-group" id="techFilters">
+          <button class="tech-filter-btn active" data-filter="all" data-i18n="skills.all">All</button>
+          <button class="tech-filter-btn" data-filter="ai">AI & ML</button>
+          <button class="tech-filter-btn" data-filter="languages">Languages</button>
+          <button class="tech-filter-btn" data-filter="backend">Backend & Frontend</button>
+          <button class="tech-filter-btn" data-filter="tools">Tools & DevOps</button>
+        </div>
+        <input type="text" class="tech-search" id="techSearch" placeholder="Search skills..." data-i18n-placeholder="skills.search">
+      </div>
+      <div class="tech-grid" id="techGrid"></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header animate-on-view">
+        <div class="section-title" data-i18n="projects.title">Featured Projects</div>
+        <div class="section-subtitle" data-i18n="projects.subtitle">Flagship Software Solutions</div>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section-header animate-on-view">
+        <div class="section-title" data-i18n="experience.title">Work History</div>
+        <div class="section-subtitle" data-i18n="experience.subtitle">Professional Timeline</div>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="section" id="roadmap">
+    <div class="container">
+      <div class="section-header animate-on-view">
+        <div class="section-title" data-i18n="roadmap.title">Future Horizons</div>
+        <div class="section-subtitle" data-i18n="roadmap.subtitle">Research & Development Roadmap</div>
+      </div>
+      <div class="roadmap-grid" id="roadmapGrid"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header animate-on-view">
+        <div class="section-title" data-i18n="contact.title">Contact & Inbox</div>
+        <div class="section-subtitle" data-i18n="contact.subtitle">Get in Touch</div>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info animate-on-view">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">✉</div>
+            <div class="contact-info-text">
+              <strong data-i18n="contact.email">Email</strong>
+              <span id="contactEmail">kzaldyn67@gmail.com</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div class="contact-info-text">
+              <strong data-i18n="contact.location">Location</strong>
+              <span id="contactLocation">Sana'a, Yemen</span>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">💻</div>
+            <div class="contact-info-text">
+              <strong>GitHub</strong>
+              <a href="https://github.com/kzaldyn" target="_blank" rel="noopener" id="contactGithub">github.com/kzaldyn</a>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">🔗</div>
+            <div class="contact-info-text">
+              <strong>LinkedIn</strong>
+              <a href="https://linkedin.com/in/kzaldyn" target="_blank" rel="noopener" id="contactLinkedin">linkedin.com/in/kzaldyn</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-card animate-on-view">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="senderName" data-i18n="form.name">Your Name</label>
+              <input type="text" id="senderName" required>
+            </div>
+            <div class="form-group">
+              <label for="senderEmail" data-i18n="form.email">Your Email</label>
+              <input type="email" id="senderEmail" required>
+            </div>
+            <div class="form-group">
+              <label for="messageSubject" data-i18n="form.subject">Subject</label>
+              <input type="text" id="messageSubject" required>
+            </div>
+            <div class="form-group">
+              <label for="messageBody" data-i18n="form.message">Message</label>
+              <textarea id="messageBody" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" data-i18n="form.send">Send Message</button>
+              <button type="reset" class="btn btn-secondary" data-i18n="form.clear">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- INBOX -->
+      <div class="inbox-section animate-on-view">
+        <div class="inbox-header">
+          <div class="inbox-title" data-i18n="inbox.title">Simulated Incoming Inbox</div>
+          <div class="inbox-count" id="inboxCount">0 messages</div>
+        </div>
+        <div class="inbox-list" id="inboxList">
+          <div class="inbox-empty" data-i18n="inbox.empty">No messages yet. Send one above.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CMS OVERLAY -->
+  <div class="cms-overlay" id="cmsOverlay"></div>
+
+  <!-- CMS DRAWER -->
+  <div class="cms-drawer" id="cmsDrawer" role="dialog" aria-label="CMS Dashboard">
+    <div class="cms-drawer-header">
+      <div class="cms-drawer-title" data-i18n="cms.title">CMS Dashboard</div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button class="btn-icon" id="cmsLogout" aria-label="Logout" title="Lock & Logout" style="color:var(--text-muted);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+        <button class="cms-drawer-close" id="cmsClose" aria-label="Close CMS">&times;</button>
+      </div>
+    </div>
+    <div class="cms-drawer-body" id="cmsBody">
+      <!-- Basics & Stats -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.basics">Basics & Stats</div>
+        <div class="cms-field">
+          <label data-i18n="cms.nameAr">Name (Arabic)</label>
+          <input type="text" id="cmsNameAr" value="عز الدين خالد عبيد">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.nameEn">Name (English)</label>
+          <input type="text" id="cmsNameEn" value="Ezzeddin Khaled Obeid">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.titleAr">Title (Arabic)</label>
+          <input type="text" id="cmsTitleAr" value="مهندس برمجيات وأخصائي ذكاء اصطناعي">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.titleEn">Title (English)</label>
+          <input type="text" id="cmsTitleEn" value="Software Engineer & AI Specialist">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.subtitleAr">Subtitle (Arabic)</label>
+          <textarea id="cmsSubtitleAr">سد الفجوة بين الأنظمة عالية الأداء وبنيات التعلم العميق الذكية.</textarea>
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.subtitleEn">Subtitle (English)</label>
+          <textarea id="cmsSubtitleEn">Bridging the gap between high-performance systems and intelligent deep learning architectures.</textarea>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.statProjects">Projects Count</label>
+            <input type="text" id="cmsStatProjects" value="12+">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.statExperience">Experience Years</label>
+            <input type="text" id="cmsStatExperience" value="4+">
+          </div>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.statModels">AI Models</label>
+            <input type="text" id="cmsStatModels" value="8+">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.statCommits">Commits</label>
+            <input type="text" id="cmsStatCommits" value="140">
+          </div>
+        </div>
+      </div>
+
+      <!-- Bio & Education -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.bio">Bio & Education</div>
+        <div class="cms-field">
+          <label data-i18n="cms.bioAr">Biography (Arabic)</label>
+          <textarea id="cmsBioAr">أنا مهندس برمجيات متفانٍ حاصل على درجة البكالوريوس في تقنية المعلومات (IT).</textarea>
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.bioEn">Biography (English)</label>
+          <textarea id="cmsBioEn">I am a dedicated Software Engineer holding a Bachelor's degree in Information Technology (IT).</textarea>
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.degreeAr">Degree (Arabic)</label>
+          <input type="text" id="cmsDegreeAr" value="بكالوريوس تقنية معلومات (IT)">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.degreeEn">Degree (English)</label>
+          <input type="text" id="cmsDegreeEn" value="Bachelor of Information Technology (IT)">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.focusAr">Focus (Arabic)</label>
+          <input type="text" id="cmsFocusAr" value="الرؤية الحاسوبية وأنظمة التوليد المعزز بالاسترجاع المتقدم (RAG)">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.focusEn">Focus (English)</label>
+          <input type="text" id="cmsFocusEn" value="Computer Vision & Advanced Retrieval-Augmented Generation (RAG) Systems">
+        </div>
+      </div>
+
+      <!-- Skills Stack -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.skills">Skills Stack</div>
+        <div class="cms-sub-label" data-i18n="cms.currentItems">Current Skills:</div>
+        <div id="cmsSkillsList"></div>
+        <div class="cms-add-separator"></div>
+        <div class="cms-sub-label" data-i18n="cms.addNew">Add New Skill:</div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.skillName">Skill Name</label>
+            <input type="text" id="cmsSkillName" placeholder="e.g. TensorFlow">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.skillProf">Proficiency (0-100)</label>
+            <input type="number" id="cmsSkillProf" min="0" max="100" placeholder="85">
+          </div>
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.skillCat">Category</label>
+          <select id="cmsSkillCat">
+            <option value="ai">AI & ML</option>
+            <option value="languages">Languages</option>
+            <option value="backend">Backend & Frontend</option>
+            <option value="tools">Tools & DevOps</option>
+          </select>
+        </div>
+        <button class="cms-btn cms-btn-primary" id="cmsAddSkill" data-i18n="cms.addSkill">+ Add Skill</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.projects">Projects Grid</div>
+        <div class="cms-sub-label" data-i18n="cms.currentItems">Current Projects:</div>
+        <div id="cmsProjectsList"></div>
+        <div class="cms-add-separator"></div>
+        <div class="cms-sub-label" data-i18n="cms.addNew">Add New Project:</div>
+        <div class="cms-field">
+          <label data-i18n="cms.projTitleAr">Title (Arabic)</label>
+          <input type="text" id="cmsProjTitleAr">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.projTitleEn">Title (English)</label>
+          <input type="text" id="cmsProjTitleEn">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.projDescAr">Description (Arabic)</label>
+          <textarea id="cmsProjDescAr"></textarea>
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.projDescEn">Description (English)</label>
+          <textarea id="cmsProjDescEn"></textarea>
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.projTags">Tags (comma separated)</label>
+          <input type="text" id="cmsProjTags" placeholder="e.g. Python, OpenCV, YOLO">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.projGlow">Glow Color</label>
+          <select id="cmsProjGlow">
+            <option value="indigo">Indigo</option>
+            <option value="cyan">Cyan</option>
+            <option value="emerald">Emerald</option>
+            <option value="violet">Violet</option>
+            <option value="amber">Amber</option>
+          </select>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.projGithub">GitHub URL</label>
+            <input type="url" id="cmsProjGithub" value="https://github.com/kzaldyn">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.projDemo">Demo URL</label>
+            <input type="url" id="cmsProjDemo" value="#">
+          </div>
+        </div>
+        <button class="cms-btn cms-btn-primary" id="cmsAddProject" data-i18n="cms.addProject">+ Add Project</button>
+      </div>
+
+      <!-- Timeline History -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.experience">Timeline History</div>
+        <div class="cms-sub-label" data-i18n="cms.currentItems">Current Experience:</div>
+        <div id="cmsExperienceList"></div>
+        <div class="cms-add-separator"></div>
+        <div class="cms-sub-label" data-i18n="cms.addNew">Add New Experience:</div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.expCompanyAr">Company (Arabic)</label>
+            <input type="text" id="cmsExpCompanyAr">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.expCompanyEn">Company (English)</label>
+            <input type="text" id="cmsExpCompanyEn">
+          </div>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.expRoleAr">Role (Arabic)</label>
+            <input type="text" id="cmsExpRoleAr">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.expRoleEn">Role (English)</label>
+            <input type="text" id="cmsExpRoleEn">
+          </div>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.expPeriodAr">Period (Arabic)</label>
+            <input type="text" id="cmsExpPeriodAr" placeholder="2024 - الحالي">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.expPeriodEn">Period (English)</label>
+            <input type="text" id="cmsExpPeriodEn" placeholder="2024 - Present">
+          </div>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.expDescAr">Description (Arabic)</label>
+            <textarea id="cmsExpDescAr"></textarea>
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.expDescEn">Description (English)</label>
+            <textarea id="cmsExpDescEn"></textarea>
+          </div>
+        </div>
+        <button class="cms-btn cms-btn-primary" id="cmsAddExperience" data-i18n="cms.addExp">+ Add Experience</button>
+      </div>
+
+      <!-- Change Password -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.changePwd">Change Password</div>
+        <div class="cms-field">
+          <label data-i18n="cms.currentPwd">Current Password</label>
+          <input type="password" id="cmsCurrentPwd" placeholder="Enter current password...">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.newPwd">New Password (min 4 chars)</label>
+          <input type="password" id="cmsNewPwd" placeholder="Enter new password...">
+        </div>
+        <button class="cms-btn cms-btn-primary" id="cmsChangePwd" data-i18n="cms.changePwdBtn">Update Password</button>
+      </div>
+
+      <!-- State Utilities -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.utilities">State Utilities</div>
+        <div class="cms-utility-group">
+          <button class="cms-btn cms-btn-success" id="cmsExport" data-i18n="cms.export">Export Schema (.json)</button>
+          <button class="cms-btn cms-btn-primary" id="cmsImport" data-i18n="cms.import">Import Schema</button>
+        </div>
+        <div class="cms-utility-group">
+          <textarea id="cmsPasteJson" placeholder="Paste raw JSON here..." style="grid-column: 1 / -1; min-height: 80px; margin-bottom: 8px;"></textarea>
+        </div>
+        <div class="cms-utility-group">
+          <button class="cms-btn cms-btn-primary" id="cmsPasteApply" data-i18n="cms.paste">Apply Pasted JSON</button>
+          <button class="cms-btn cms-btn-danger" id="cmsRevert" data-i18n="cms.revert">Revert to Defaults</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH OVERLAY -->
+  <div class="auth-overlay" id="authOverlay"></div>
+
+  <!-- AUTH MODAL -->
+  <div class="auth-modal" id="authModal" role="dialog" aria-label="Authentication">
+    <div class="auth-modal-content">
+      <div class="auth-modal-icon">🔒</div>
+      <div class="auth-modal-title" data-i18n="auth.title">CMS Access</div>
+      <div class="auth-modal-desc" data-i18n="auth.desc">Enter password to unlock the dashboard</div>
+      <div class="auth-field">
+        <input type="password" id="authPassword" placeholder="Enter password..." data-i18n-placeholder="auth.placeholder">
+      </div>
+      <div class="auth-error" id="authError" data-i18n="auth.error">Incorrect password. Try again.</div>
+      <div class="auth-actions">
+        <button class="btn btn-primary" id="authSubmit" data-i18n="auth.unlock">Unlock</button>
+        <button class="btn btn-secondary" id="authCancel" data-i18n="auth.cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/cms.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

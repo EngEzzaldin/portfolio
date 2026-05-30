@@ -1,0 +1,13 @@
+# OS
+Thumbs.db
+.DS_Store
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Temp
+node_modules/
+.env
