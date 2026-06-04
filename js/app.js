@@ -73,17 +73,22 @@ function initEvents() {
     showToast('Message sent successfully!', 'success');
   });
 
-  var lbClose = document.getElementById('lightboxClose');
-  var lb = document.getElementById('lightbox');
+  var lbClose = document.getElementById('galleryModalClose');
+  var lb = document.getElementById('galleryModal');
   if (lbClose && lb) {
-    lbClose.addEventListener('click', function () { lb.classList.remove('open'); });
+    lbClose.addEventListener('click', function () { closeGalleryModal(lb); });
     lb.addEventListener('click', function (e) {
-      if (e.target === lb) lb.classList.remove('open');
+      if (e.target === lb) closeGalleryModal(lb);
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') lb.classList.remove('open');
+      if (e.key === 'Escape') closeGalleryModal(lb);
     });
   }
+}
+
+function closeGalleryModal(el) {
+  el.classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 document.addEventListener('DOMContentLoaded', function () {

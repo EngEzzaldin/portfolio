@@ -122,11 +122,13 @@ function renderGallery() {
   const grid = document.getElementById('galleryGrid');
   if (!grid) return;
   grid.innerHTML = (d.gallery || []).map(function (item, i) {
+    var title = lang === 'ar' ? item.titleAr : item.titleEn;
+    var desc = lang === 'ar' ? item.descAr : item.descEn;
     return '<div class="gallery-card animate-on-view" data-gallery-index="' + i + '">' +
-      '<img src="' + escapeHtml(item.imageUrl) + '" alt="' + escapeHtml(lang === 'ar' ? item.titleAr : item.titleEn) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
-      '<div class="gallery-card-body">' +
-        '<div class="gallery-card-title">' + (lang === 'ar' ? escapeHtml(item.titleAr) : escapeHtml(item.titleEn)) + '</div>' +
-        '<div class="gallery-card-desc">' + (lang === 'ar' ? escapeHtml(item.descAr) : escapeHtml(item.descEn)) + '</div>' +
+      '<img src="' + escapeHtml(item.imageUrl) + '" alt="' + escapeHtml(title) + '" loading="lazy">' +
+      '<div class="gallery-card-overlay">' +
+        '<div class="title">' + escapeHtml(title) + '</div>' +
+        (desc ? '<div class="sub">' + escapeHtml(desc.substring(0, 60)) + (desc.length > 60 ? '...' : '') + '</div>' : '') +
       '</div>' +
     '</div>';
   }).join('');
@@ -135,15 +137,19 @@ function renderGallery() {
       var idx = parseInt(card.dataset.galleryIndex);
       var items = AppState.getData().gallery;
       if (items && items[idx]) {
-        var lb = document.getElementById('lightbox');
-        var lbImg = document.getElementById('lightboxImg');
-        if (lb && lbImg) {
-          lbImg.src = items[idx].imageUrl;
-          lb.classList.add('open');
-        }
+        openGalleryModal(items[idx]);
       }
     });
   });
+}
+
+function openGalleryModal(item) {
+  const lang = AppState.getLang();
+  document.getElementById('galleryModalImg').src = item.imageUrl;
+  document.getElementById('galleryModalTitle').textContent = lang === 'ar' ? item.titleAr : item.titleEn;
+  document.getElementById('galleryModalDesc').textContent = lang === 'ar' ? item.descAr : item.descEn;
+  document.getElementById('galleryModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function renderContact() {
