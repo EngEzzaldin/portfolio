@@ -42,3 +42,142 @@
   --font-english: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ===== LIGHT THEME ===== */
+.light-mode {
+  --clr-bg: #ffffff;
+  --clr-surface: #f8fafd;
+  --clr-surface-hover: #f0f4fa;
+  --clr-border: #dce3ec;
+  --clr-border-hover: #c5cedc;
+  --clr-text: #2a2a2a;
+  --clr-text-secondary: #4a5568;
+  --clr-text-muted: #718096;
+  --clr-accent: #1e51d8;
+  --clr-success: #059669;
+  --clr-error: #dc2626;
+
+  --glow-indigo: #1e51d8;
+  --glow-cyan: #0891b2;
+  --glow-emerald: #059669;
+  --glow-violet: #7c3aed;
+  --glow-amber: #d97706;
+}
+
+body.light-mode {
+  background: linear-gradient(135deg, #c2f1f5 0%, #ffffff 50%, #fff1e0 100%);
+}
+
+.light-mode .navbar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.light-mode .stat-card,
+.light-mode .project-card,
+.light-mode .timeline-content,
+.light-mode .roadmap-card,
+.light-mode .credential-card,
+.light-mode .contact-form-card,
+.light-mode .contact-info-item,
+.light-mode .inbox-section,
+.light-mode .inbox-item {
+  background: #ffffff;
+  border-color: var(--clr-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.light-mode .tech-item {
+  background: #ffffff;
+  border-color: var(--clr-border);
+}
+
+.light-mode .tech-bar-fill {
+  background: linear-gradient(90deg, #1e51d8, #6366f1);
+}
+
+.light-mode .btn-primary {
+  background: #1e51d8;
+  color: #ffffff;
+}
+
+.light-mode .btn-primary:hover {
+  background: #1a44b8;
+}
+
+.light-mode .btn-secondary {
+  background: var(--clr-surface);
+  color: var(--clr-text);
+  border-color: var(--clr-border);
+}
+
+.light-mode .navbar-brand span {
+  background: linear-gradient(135deg, #1e51d8, #6366f1);
+}
+
+.light-mode .project-tag {
+  background: #eef2ff;
+  color: #1e51d8;
+}
+
+.light-mode .timeline-dot {
+  background: #1e51d8;
+  box-shadow: 0 0 8px rgba(30, 81, 216, 0.4);
+}
+
+.light-mode .timeline-item::before {
+  background: var(--clr-border);
+}
+
+.light-mode #heroName {
+  color: #1e51d8;
+}
+
+.light-mode .roadmap-status.active { background: #dbeafe; color: #1e51d8; }
+.light-mode .roadmap-status.learning { background: #fef3c7; color: #b45309; }
+.light-mode .roadmap-status.research { background: #f3e8ff; color: #7c3aed; }
+
+.light-mode #heroName {
+  color: #1e51d8;
+}
+
+.light-mode .stat-card {
+  border-top: 3px solid #e9a331;
+}
+
+.light-mode .tech-filter-btn.active {
+  background: #1e51d8;
+  color: #ffffff;
+}
+
+.light-mode .about-bio {
+  background: #ffffff;
+}
+
+.light-mode .tech-filter-btn:hover {
+  background: var(--clr-surface-hover);
+}
+
+.light-mode .section-subtitle {
+  color: var(--clr-text-secondary);
+}
+
+.light-mode .contact-form-card input,
+.light-mode .contact-form-card textarea {
+  background: var(--clr-surface);
+  border-color: var(--clr-border);
+  color: var(--clr-text);
+}
+
+.light-mode .contact-form-card input:focus,
+.light-mode .contact-form-card textarea:focus {
+  border-color: #1e51d8;
+}
+
+.light-mode .navbar-links a:hover {
+  color: #1e51d8;
+}
+
+.light-mode .btn-icon:hover {
+  background: var(--clr-surface-hover);
+}

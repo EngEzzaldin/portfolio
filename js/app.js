@@ -12,11 +12,33 @@ function openCMS() {
   renderCMSLists();
 }
 
+function toggleTheme() {
+  var body = document.body;
+  var icon = document.getElementById('themeIcon');
+  body.classList.toggle('light-mode');
+  var isLight = body.classList.contains('light-mode');
+  localStorage.setItem('_portfolio_theme', isLight ? 'light' : 'dark');
+  if (icon) icon.textContent = isLight ? '☀️' : '🌙';
+}
+
+function applySavedTheme() {
+  var saved = localStorage.getItem('_portfolio_theme');
+  var icon = document.getElementById('themeIcon');
+  if (saved === 'light') {
+    document.body.classList.add('light-mode');
+    if (icon) icon.textContent = '☀️';
+  } else {
+    if (icon) icon.textContent = '🌙';
+  }
+}
+
 function initEvents() {
   document.getElementById('langToggle').addEventListener('click', function () {
     AppState.setLang(AppState.isRTL() ? 'en' : 'ar');
     renderAll();
   });
+
+  document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 
   document.getElementById('cmsToggle').addEventListener('click', function () {
     if (AUTH.isAuthenticated()) { openCMS(); }
@@ -54,6 +76,7 @@ function initEvents() {
 
 document.addEventListener('DOMContentLoaded', function () {
   AppState.init();
+  applySavedTheme();
   renderAll();
   initEvents();
   initCMS();
