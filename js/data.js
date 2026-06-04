@@ -140,5 +140,65 @@ const INITIAL_DATA = {
       { label: 'Telegram', url: 'https://t.me/kzaldyn', icon: '✈' },
       { label: 'Website', url: 'https://portfolio-virid-three-58.vercel.app', icon: '🌐' }
     ]
-  }
+  },
+  services: [
+    {
+      id: 'cv-systems',
+      icon: '👁',
+      titleAr: 'أنظمة الرؤية الحاسوبية',
+      titleEn: 'Computer Vision Systems',
+      descAr: 'تصميم وتطوير أنظمة كشف وتصنيف الأشياء في الوقت الفعلي باستخدام YOLO و OpenCV مع زمن استجابة أقل من 50ms.',
+      descEn: 'Design and development of real-time object detection and classification systems using YOLO and OpenCV with sub-50ms latency.'
+    },
+    {
+      id: 'rag-systems',
+      icon: '🔍',
+      titleAr: 'أنظمة RAG والتوليد المعزز',
+      titleEn: 'RAG & Generative Systems',
+      descAr: 'بناء محركات بحث ذكية للمستندات باستخدام LangChain وقواعد البيانات المتجهية مع توليد إجابات دقيقة بالعربية والإنجليزية.',
+      descEn: 'Building intelligent document search engines using LangChain and vector databases with accurate Arabic/English response generation.'
+    },
+    {
+      id: 'backend-dev',
+      icon: '⚙',
+      titleAr: 'تطوير الأنظمة الخلفية',
+      titleEn: 'Backend Development',
+      descAr: 'هندسة أنظمة خلفية قابلة للتوسع باستخدام Node.js و FastAPI مع قواعد بيانات PostgreSQL و RESTful APIs آمنة.',
+      descEn: 'Engineering scalable backend systems using Node.js and FastAPI with PostgreSQL databases and secure RESTful APIs.'
+    },
+    {
+      id: 'fullstack',
+      icon: '🖥',
+      titleAr: 'تطوير واجهات أمامية كاملة',
+      titleEn: 'Full-Stack Development',
+      descAr: 'بناء تطبيقات ويب متكاملة من الواجهة إلى قاعدة البيانات باستخدام React و TypeScript مع تجربة مستخدم عصرية.',
+      descEn: 'Building complete web applications from frontend to database using React and TypeScript with modern UX.'
+    }
+  ],
+  gallery: [
+    {
+      id: 'gallery-1',
+      imageUrl: 'https://placehold.co/800x600/1e51d8/ffffff?text=Robotic+Sight',
+      titleAr: ' Robotic Sight',
+      titleEn: 'Robotic Sight',
+      descAr: 'نظام رؤية حاسوبية فوري لكشف وتتبع الأشياء',
+      descEn: 'Real-time computer vision system for object detection and tracking'
+    },
+    {
+      id: 'gallery-2',
+      imageUrl: 'https://placehold.co/800x600/6366f1/ffffff?text=ArbDoc+RAG',
+      titleAr: 'ArbDoc RAG',
+      titleEn: 'ArbDoc RAG',
+      descAr: 'محرك بحث عربي ذكي للمستندات القانونية',
+      descEn: 'Smart Arabic search engine for legal documents'
+    },
+    {
+      id: 'gallery-3',
+      imageUrl: 'https://placehold.co/800x600/10b981/ffffff?text=CoreStock',
+      titleAr: 'CoreStock Ledger',
+      titleEn: 'CoreStock Ledger',
+      descAr: 'منظومة مخازن ولوجستيات للمؤسسات',
+      descEn: 'Enterprise inventory and logistics management system'
+    }
+  ]
 };

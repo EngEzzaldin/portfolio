@@ -9,6 +9,8 @@ function renderCMSLists() {
   renderCMSExperience();
   renderCMSRoadmap();
   renderCMSContactLinks();
+  renderCMSServices();
+  renderCMSGallery();
 }
 
 function renderCMSSkills() {
@@ -423,6 +425,52 @@ function initCMS() {
     renderAll();
     showToast('Contact link added!', 'success');
   });
+
+  document.getElementById('cmsAddService').addEventListener('click', () => {
+    const icon = document.getElementById('cmsServiceIcon').value.trim() || '⚙';
+    const titleAr = document.getElementById('cmsServiceTitleAr').value.trim();
+    const titleEn = document.getElementById('cmsServiceTitleEn').value.trim();
+    const descAr = document.getElementById('cmsServiceDescAr').value.trim();
+    const descEn = document.getElementById('cmsServiceDescEn').value.trim();
+    if (!titleAr || !titleEn || !descAr || !descEn) {
+      showToast('Please fill all fields', 'error');
+      return;
+    }
+    const d = AppState.getData();
+    if (!d.services) d.services = [];
+    d.services.push({ id: 'svc-' + Date.now().toString(36), icon, titleAr, titleEn, descAr, descEn });
+    AppState.setData(d);
+    document.getElementById('cmsServiceIcon').value = '';
+    document.getElementById('cmsServiceTitleAr').value = '';
+    document.getElementById('cmsServiceTitleEn').value = '';
+    document.getElementById('cmsServiceDescAr').value = '';
+    document.getElementById('cmsServiceDescEn').value = '';
+    renderAll();
+    showToast('Service added!', 'success');
+  });
+
+  document.getElementById('cmsAddGallery').addEventListener('click', () => {
+    const imageUrl = document.getElementById('cmsGalleryImageUrl').value.trim();
+    const titleAr = document.getElementById('cmsGalleryTitleAr').value.trim();
+    const titleEn = document.getElementById('cmsGalleryTitleEn').value.trim();
+    const descAr = document.getElementById('cmsGalleryDescAr').value.trim();
+    const descEn = document.getElementById('cmsGalleryDescEn').value.trim();
+    if (!imageUrl || !titleAr || !titleEn) {
+      showToast('Please fill image URL and title', 'error');
+      return;
+    }
+    const d = AppState.getData();
+    if (!d.gallery) d.gallery = [];
+    d.gallery.push({ id: 'gal-' + Date.now().toString(36), imageUrl, titleAr, titleEn, descAr, descEn });
+    AppState.setData(d);
+    document.getElementById('cmsGalleryImageUrl').value = '';
+    document.getElementById('cmsGalleryTitleAr').value = '';
+    document.getElementById('cmsGalleryTitleEn').value = '';
+    document.getElementById('cmsGalleryDescAr').value = '';
+    document.getElementById('cmsGalleryDescEn').value = '';
+    renderAll();
+    showToast('Gallery item added!', 'success');
+  });
 }
 
 function renderCMSRoadmap() {
@@ -480,6 +528,50 @@ function renderCMSContactLinks() {
       const d = AppState.getData();
       if (!d.contact.links) d.contact.links = [];
       d.contact.links.splice(idx, 1);
+      AppState.setData(d);
+      renderAll();
+    });
+  });
+}
+
+function renderCMSServices() {
+  const d = AppState.getData();
+  const list = document.getElementById('cmsServicesList');
+  if (!list) return;
+  list.innerHTML = (d.services || []).map((s, i) => `
+    <div class="cms-skill-item">
+      <span class="cms-item-name">${escapeHtml(s.icon || '⚙')} ${escapeHtml(s.titleEn)}</span>
+      <button class="cms-item-delete" data-service-del="${i}">&times;</button>
+    </div>
+  `).join('');
+  list.querySelectorAll('[data-service-del]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.serviceDel);
+      const d = AppState.getData();
+      if (!d.services) d.services = [];
+      d.services.splice(idx, 1);
+      AppState.setData(d);
+      renderAll();
+    });
+  });
+}
+
+function renderCMSGallery() {
+  const d = AppState.getData();
+  const list = document.getElementById('cmsGalleryList');
+  if (!list) return;
+  list.innerHTML = (d.gallery || []).map((item, i) => `
+    <div class="cms-skill-item">
+      <span class="cms-item-name">🖼 ${escapeHtml(item.titleEn)}</span>
+      <button class="cms-item-delete" data-gallery-del="${i}">&times;</button>
+    </div>
+  `).join('');
+  list.querySelectorAll('[data-gallery-del]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.galleryDel);
+      const d = AppState.getData();
+      if (!d.gallery) d.gallery = [];
+      d.gallery.splice(idx, 1);
       AppState.setData(d);
       renderAll();
     });

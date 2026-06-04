@@ -102,6 +102,50 @@ function renderRoadmap() {
   }).join('');
 }
 
+function renderServices() {
+  const d = AppState.getData();
+  const lang = AppState.getLang();
+  const grid = document.getElementById('servicesGrid');
+  if (!grid) return;
+  grid.innerHTML = (d.services || []).map(function (s) {
+    return '<div class="service-card animate-on-view">' +
+      '<div class="service-icon">' + (s.icon || '⚙') + '</div>' +
+      '<div class="service-title">' + (lang === 'ar' ? escapeHtml(s.titleAr) : escapeHtml(s.titleEn)) + '</div>' +
+      '<div class="service-desc">' + (lang === 'ar' ? escapeHtml(s.descAr) : escapeHtml(s.descEn)) + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function renderGallery() {
+  const d = AppState.getData();
+  const lang = AppState.getLang();
+  const grid = document.getElementById('galleryGrid');
+  if (!grid) return;
+  grid.innerHTML = (d.gallery || []).map(function (item, i) {
+    return '<div class="gallery-card animate-on-view" data-gallery-index="' + i + '">' +
+      '<img src="' + escapeHtml(item.imageUrl) + '" alt="' + escapeHtml(lang === 'ar' ? item.titleAr : item.titleEn) + '" loading="lazy">' +
+      '<div class="gallery-card-body">' +
+        '<div class="gallery-card-title">' + (lang === 'ar' ? escapeHtml(item.titleAr) : escapeHtml(item.titleEn)) + '</div>' +
+        '<div class="gallery-card-desc">' + (lang === 'ar' ? escapeHtml(item.descAr) : escapeHtml(item.descEn)) + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+  grid.querySelectorAll('.gallery-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var idx = parseInt(card.dataset.galleryIndex);
+      var items = AppState.getData().gallery;
+      if (items && items[idx]) {
+        var lb = document.getElementById('lightbox');
+        var lbImg = document.getElementById('lightboxImg');
+        if (lb && lbImg) {
+          lbImg.src = items[idx].imageUrl;
+          lb.classList.add('open');
+        }
+      }
+    });
+  });
+}
+
 function renderContact() {
   const d = AppState.getData();
   const lang = AppState.getLang();
@@ -211,6 +255,8 @@ function renderAll() {
   renderProjects();
   renderTimeline();
   renderRoadmap();
+  renderServices();
+  renderGallery();
   renderContact();
   renderInbox();
   renderCMSFields();

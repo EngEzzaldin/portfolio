@@ -72,6 +72,18 @@ function initEvents() {
     e.target.reset();
     showToast('Message sent successfully!', 'success');
   });
+
+  var lbClose = document.getElementById('lightboxClose');
+  var lb = document.getElementById('lightbox');
+  if (lbClose && lb) {
+    lbClose.addEventListener('click', function () { lb.classList.remove('open'); });
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb) lb.classList.remove('open');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') lb.classList.remove('open');
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {

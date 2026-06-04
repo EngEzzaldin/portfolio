@@ -4,6 +4,8 @@ const i18n = {
     skills: { en: 'Skills', ar: 'المهارات' },
     projects: { en: 'Projects', ar: 'المشاريع' },
     experience: { en: 'Experience', ar: 'الخبرات' },
+    services: { en: 'Services', ar: 'الخدمات' },
+    gallery: { en: 'Gallery', ar: 'المعرض' },
     contact: { en: 'Contact', ar: 'التواصل' }
   },
   stats: {
@@ -35,6 +37,14 @@ const i18n = {
   roadmap: {
     title: { en: 'Future Horizons', ar: 'الآفاق المستقبلية' },
     subtitle: { en: 'Research & Development Roadmap', ar: 'خارطة البحث والتطوير' }
+  },
+  services: {
+    title: { en: 'Services', ar: 'الخدمات' },
+    subtitle: { en: 'What I Offer', ar: 'ماذا أقدم' }
+  },
+  gallery: {
+    title: { en: 'Portfolio Gallery', ar: 'معرض الأعمال' },
+    subtitle: { en: 'My Work Samples', ar: 'نماذج من أعمالي' }
   },
   contact: {
     title: { en: 'Contact & Inbox', ar: 'التواصل والبريد' },
@@ -134,7 +144,21 @@ const i18n = {
     contactLabel: { en: 'Label', ar: 'الاسم' },
     contactIcon: { en: 'Icon (emoji)', ar: 'الأيقونة (رمز) ' },
     contactLinkUrl: { en: 'URL', ar: 'الرابط' },
-    addContactLink: { en: '+ Add Link', ar: '+ إضافة رابط' }
+    addContactLink: { en: '+ Add Link', ar: '+ إضافة رابط' },
+    services: { en: 'Services', ar: 'الخدمات' },
+    serviceIcon: { en: 'Icon (emoji)', ar: 'الأيقونة (رمز)' },
+    serviceTitleAr: { en: 'Title (Arabic)', ar: 'العنوان (عربي)' },
+    serviceTitleEn: { en: 'Title (English)', ar: 'العنوان (إنجليزي)' },
+    serviceDescAr: { en: 'Description (Arabic)', ar: 'الوصف (عربي)' },
+    serviceDescEn: { en: 'Description (English)', ar: 'الوصف (إنجليزي)' },
+    addService: { en: '+ Add Service', ar: '+ إضافة خدمة' },
+    gallery: { en: 'Portfolio Gallery', ar: 'معرض الأعمال' },
+    galleryImageUrl: { en: 'Image URL', ar: 'رابط الصورة' },
+    galleryTitleAr: { en: 'Title (Arabic)', ar: 'العنوان (عربي)' },
+    galleryTitleEn: { en: 'Title (English)', ar: 'العنوان (إنجليزي)' },
+    galleryDescAr: { en: 'Description (Arabic)', ar: 'الوصف (عربي)' },
+    galleryDescEn: { en: 'Description (English)', ar: 'الوصف (إنجليزي)' },
+    addGallery: { en: '+ Add Gallery Item', ar: '+ إضافة عنصر للمعرض' }
   },
   footer: {
     credit: { en: 'Work of Engineer Ezzeddin Khaled Obaid', ar: 'عمل المهندس عز الدين خالد عبيد' }

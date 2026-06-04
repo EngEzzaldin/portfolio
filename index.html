@@ -21,6 +21,8 @@
         <a href="#skills" data-i18n="nav.skills">Skills</a>
         <a href="#projects" data-i18n="nav.projects">Projects</a>
         <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
       <div class="nav-controls">
@@ -148,6 +150,28 @@
         <div class="section-subtitle" data-i18n="roadmap.subtitle">Research & Development Roadmap</div>
       </div>
       <div class="roadmap-grid" id="roadmapGrid"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header animate-on-view">
+        <div class="section-title" data-i18n="services.title">Services</div>
+        <div class="section-subtitle" data-i18n="services.subtitle">What I Offer</div>
+      </div>
+      <div class="services-grid" id="servicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-header animate-on-view">
+        <div class="section-title" data-i18n="gallery.title">Portfolio Gallery</div>
+        <div class="section-subtitle" data-i18n="gallery.subtitle">My Work Samples</div>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
     </div>
   </section>
 
@@ -499,6 +523,74 @@
         <button class="cms-btn cms-btn-primary" id="cmsAddContactLink" data-i18n="cms.addContactLink">+ Add Link</button>
       </div>
 
+      <!-- Services -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.services">Services</div>
+        <div class="cms-sub-label" data-i18n="cms.currentItems">Current Services:</div>
+        <div id="cmsServicesList"></div>
+        <div class="cms-add-separator"></div>
+        <div class="cms-sub-label" data-i18n="cms.addNew">Add New Service:</div>
+        <div class="cms-field">
+          <label data-i18n="cms.serviceIcon">Icon (emoji)</label>
+          <input type="text" id="cmsServiceIcon" placeholder="e.g. 👁">
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.serviceTitleAr">Title (Arabic)</label>
+            <input type="text" id="cmsServiceTitleAr">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.serviceTitleEn">Title (English)</label>
+            <input type="text" id="cmsServiceTitleEn">
+          </div>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.serviceDescAr">Description (Arabic)</label>
+            <textarea id="cmsServiceDescAr"></textarea>
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.serviceDescEn">Description (English)</label>
+            <textarea id="cmsServiceDescEn"></textarea>
+          </div>
+        </div>
+        <button class="cms-btn cms-btn-primary" id="cmsAddService" data-i18n="cms.addService">+ Add Service</button>
+      </div>
+
+      <!-- Gallery -->
+      <div class="cms-section">
+        <div class="cms-section-title" data-i18n="cms.gallery">Portfolio Gallery</div>
+        <div class="cms-sub-label" data-i18n="cms.currentItems">Current Gallery Items:</div>
+        <div id="cmsGalleryList"></div>
+        <div class="cms-add-separator"></div>
+        <div class="cms-sub-label" data-i18n="cms.addNew">Add New Gallery Item:</div>
+        <div class="cms-field">
+          <label data-i18n="cms.galleryImageUrl">Image URL</label>
+          <input type="url" id="cmsGalleryImageUrl" placeholder="https://...">
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.galleryTitleAr">Title (Arabic)</label>
+            <input type="text" id="cmsGalleryTitleAr">
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.galleryTitleEn">Title (English)</label>
+            <input type="text" id="cmsGalleryTitleEn">
+          </div>
+        </div>
+        <div class="cms-field-row">
+          <div class="cms-field">
+            <label data-i18n="cms.galleryDescAr">Description (Arabic)</label>
+            <textarea id="cmsGalleryDescAr"></textarea>
+          </div>
+          <div class="cms-field">
+            <label data-i18n="cms.galleryDescEn">Description (English)</label>
+            <textarea id="cmsGalleryDescEn"></textarea>
+          </div>
+        </div>
+        <button class="cms-btn cms-btn-primary" id="cmsAddGallery" data-i18n="cms.addGallery">+ Add Gallery Item</button>
+      </div>
+
       <!-- Roadmap -->
       <div class="cms-section">
         <div class="cms-section-title" data-i18n="cms.roadmap">Future Roadmap</div>
@@ -581,6 +673,12 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img id="lightboxImg" src="" alt="Gallery preview">
   </div>
 
   <!-- AUTH OVERLAY -->
