@@ -1,18 +1,7 @@
 const STORAGE_KEY = 'portfolio_data';
 const LANG_KEY = 'portfolio_lang';
-
-function deepMerge(target, source) {
-  for (var key in source) {
-    if (source.hasOwnProperty(key)) {
-      if (!target.hasOwnProperty(key)) {
-        target[key] = JSON.parse(JSON.stringify(source[key]));
-      } else if (typeof source[key] === 'object' && source[key] !== null && !Array.isArray(source[key])) {
-        deepMerge(target[key], source[key]);
-      }
-    }
-  }
-  return target;
-}
+const DATA_VERSION_KEY = '_portfolio_data_version';
+const DATA_VERSION = 2;
 
 const AppState = {
   data: null,
@@ -21,12 +10,14 @@ const AppState = {
 
   init() {
     this.lang = localStorage.getItem(LANG_KEY) || 'en';
+    var savedVersion = parseInt(localStorage.getItem(DATA_VERSION_KEY)) || 0;
+    if (savedVersion < DATA_VERSION) {
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem(DATA_VERSION_KEY, DATA_VERSION.toString());
+    }
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
-      try {
-        this.data = JSON.parse(saved);
-        deepMerge(this.data, INITIAL_DATA);
-      }
+      try { this.data = JSON.parse(saved); }
       catch { this.data = JSON.parse(JSON.stringify(INITIAL_DATA)); }
     } else {
       this.data = JSON.parse(JSON.stringify(INITIAL_DATA));
