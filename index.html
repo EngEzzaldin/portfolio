@@ -565,8 +565,15 @@
         <div class="cms-add-separator"></div>
         <div class="cms-sub-label" data-i18n="cms.addNew">Add New Gallery Item:</div>
         <div class="cms-field">
-          <label data-i18n="cms.galleryImageUrl">Image URL</label>
+          <label data-i18n="cms.galleryImageUrl">Image URL (paste or upload below)</label>
           <input type="url" id="cmsGalleryImageUrl" placeholder="https://...">
+        </div>
+        <div class="cms-field">
+          <label data-i18n="cms.galleryUpload">Upload Image from File</label>
+          <input type="file" id="cmsGalleryFileInput" accept="image/*">
+          <div id="cmsGalleryPreview" style="margin-top:8px;max-width:100%;border-radius:8px;overflow:hidden;display:none;">
+            <img id="cmsGalleryPreviewImg" style="width:100%;max-height:180px;object-fit:cover;display:block;">
+          </div>
         </div>
         <div class="cms-field-row">
           <div class="cms-field">

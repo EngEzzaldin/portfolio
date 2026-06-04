@@ -158,6 +158,7 @@ const i18n = {
     galleryTitleEn: { en: 'Title (English)', ar: 'العنوان (إنجليزي)' },
     galleryDescAr: { en: 'Description (Arabic)', ar: 'الوصف (عربي)' },
     galleryDescEn: { en: 'Description (English)', ar: 'الوصف (إنجليزي)' },
+    galleryUpload: { en: 'Upload Image from File', ar: 'رفع صورة من الملف' },
     addGallery: { en: '+ Add Gallery Item', ar: '+ إضافة عنصر للمعرض' }
   },
   footer: {

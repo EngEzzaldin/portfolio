@@ -123,7 +123,7 @@ function renderGallery() {
   if (!grid) return;
   grid.innerHTML = (d.gallery || []).map(function (item, i) {
     return '<div class="gallery-card animate-on-view" data-gallery-index="' + i + '">' +
-      '<img src="' + escapeHtml(item.imageUrl) + '" alt="' + escapeHtml(lang === 'ar' ? item.titleAr : item.titleEn) + '" loading="lazy">' +
+      '<img src="' + escapeHtml(item.imageUrl) + '" alt="' + escapeHtml(lang === 'ar' ? item.titleAr : item.titleEn) + '" loading="lazy" onerror="this.style.display=\'none\'">' +
       '<div class="gallery-card-body">' +
         '<div class="gallery-card-title">' + (lang === 'ar' ? escapeHtml(item.titleAr) : escapeHtml(item.titleEn)) + '</div>' +
         '<div class="gallery-card-desc">' + (lang === 'ar' ? escapeHtml(item.descAr) : escapeHtml(item.descEn)) + '</div>' +

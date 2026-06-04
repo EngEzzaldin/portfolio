@@ -449,6 +449,21 @@ function initCMS() {
     showToast('Service added!', 'success');
   });
 
+  document.getElementById('cmsGalleryFileInput').addEventListener('change', function (e) {
+    var file = e.target.files[0];
+    if (!file) return;
+    var preview = document.getElementById('cmsGalleryPreview');
+    var previewImg = document.getElementById('cmsGalleryPreviewImg');
+    var urlInput = document.getElementById('cmsGalleryImageUrl');
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      urlInput.value = ev.target.result;
+      previewImg.src = ev.target.result;
+      preview.style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  });
+
   document.getElementById('cmsAddGallery').addEventListener('click', () => {
     const imageUrl = document.getElementById('cmsGalleryImageUrl').value.trim();
     const titleAr = document.getElementById('cmsGalleryTitleAr').value.trim();
@@ -468,6 +483,8 @@ function initCMS() {
     document.getElementById('cmsGalleryTitleEn').value = '';
     document.getElementById('cmsGalleryDescAr').value = '';
     document.getElementById('cmsGalleryDescEn').value = '';
+    document.getElementById('cmsGalleryPreview').style.display = 'none';
+    document.getElementById('cmsGalleryFileInput').value = '';
     renderAll();
     showToast('Gallery item added!', 'success');
   });
