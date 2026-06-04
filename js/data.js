@@ -1,63 +1,59 @@
 const INITIAL_DATA = {
   basics: {
-    nameAr: 'eng. عز الدين خالد عبيد',
-    nameEn: 'eng. Ezzaldin Khaild Obaid',
-    titleAr: 'مهندس برمجيات وأخصائي ذكاء اصطناعي',
-    titleEn: 'Software Engineer & AI Specialist',
-    subtitleAr: 'سد الفجوة بين الأنظمة عالية الأداء وبنيات التعلم العميق الذكية. متخصص في الرؤية الحاسوبية، محركات التوليد المعزز بالاسترجاع (RAG) المخصصة، وتطوير الأنظمة المتكاملة.',
-    subtitleEn: 'Bridging the gap between high-performance systems and intelligent deep learning architectures. Specialized in Computer Vision, bespoke RAG engines, and robust full-stack software development.',
+    nameAr: 'عز الدين خالد عبيد',
+    nameEn: 'Ezzaldin Khaild Obaid',
+    titleAr: 'مهندس برمجيات | أخصائي ذكاء اصطناعي | مطور Full-stack',
+    titleEn: 'Software Engineer | AI Specialist | Full-stack Developer',
+    subtitleAr: 'مهندس تقنية معلومات (IT) وشغوف بالابتكار التقني، أجمع بين مهارات البرمجة المتقدمة وتحليل البيانات والذكاء الاصطناعي. متخصص في بناء أنظمة ERP المتكاملة وتطبيقات الرؤية الحاسوبية والويب.',
+    subtitleEn: 'Information Technology (IT) Engineer passionate about technical innovation, combining advanced programming, data analysis, and AI. Specialized in building integrated ERP systems, computer vision applications, and web solutions.',
     stats: {
-      projects: '12+',
+      projects: '15+',
       experience: '4+',
-      models: '8+',
-      commits: '140'
+      models: '10+',
+      commits: '200'
     }
   },
   about: {
-    bioAr: 'أنا مهندس برمجيات متفانٍ حاصل على درجة البكالوريوس في تقنية المعلومات (IT). يزدهر شغفي التقني عند تقاطع التعلم العميق مع بنيات الأنظمة الخلفية القوية. من خلال دمج البنية التحتية البرمجية مع الذكاء الاصطناعي، أقوم بهندسة قنوات برمجية قابلة للتوسع للكشف عن الكائنات بدقة عالية، وتصنيف البث المباشر للكاميرات، والبحث المقترن بالاسترجاع الذكي للمستندات بالمؤسسات (RAG). لقد كرست خبرتي كمطور أنظمة لبناء وتصميم شيفرات نظيفة، محسنة ومستدامة للتطوير.',
-    bioEn: 'I am a dedicated Software Engineer holding a Bachelor\'s degree in Information Technology (IT). My technical journey thrives at the intersection of deep learning and robust backend software architecture. By merging system infrastructure with artificial intelligence, I engineer scalable pipelines for high-accuracy object detection, live camera feeds classification, and enterprise document contextual-search (RAG). My experience as a Systems Developer has instilled a strict discipline for writing clean, optimized, and maintainable code.',
-    degreeAr: 'بكالوريوس تقنية معلومات (IT)',
-    degreeEn: 'Bachelor of Information Technology (IT)',
-    focusAr: 'الرؤية الحاسوبية وأنظمة التوليد المعزز بالاسترجاع المتقدم (RAG)',
-    focusEn: 'Computer Vision & Advanced Retrieval-Augmented Generation (RAG) Systems'
+    bioAr: 'مهندس تقنية معلومات (IT) وشغوف بالابتكار التقني، أجمع بين مهارات البرمجة المتقدمة وتحليل البيانات والذكاء الاصطناعي. متخصص في بناء أنظمة الويب المتكاملة وتطبيقات الجوال التي تحل مشكلات واقعية، مع خبرة عملية في تطوير أنظمة ERP المحاسبية وأنظمة المرور الذكية. أتميز بالقدرة على القيادة، العمل الجماعي، وتحويل المتطلبات المعقدة إلى حلول تقنية بسيطة وفعالة.',
+    bioEn: 'Information Technology (IT) Engineer passionate about technical innovation, combining advanced programming, data analysis, and AI. Specialized in building integrated web systems and mobile applications that solve real-world problems, with hands-on experience in developing accounting ERP systems and smart traffic systems. Known for leadership, teamwork, and turning complex requirements into simple, effective technical solutions.',
+    degreeAr: 'مهندس تقنية معلومات (IT)',
+    degreeEn: 'Engineer in Information Technology (IT)',
+    focusAr: 'الأنظمة المتكاملة، ERP، الرؤية الحاسوبية، وتطبيقات الذكاء الاصطناعي',
+    focusEn: 'Integrated Systems, ERP, Computer Vision, and AI Applications'
   },
   skills: [
-    { name: 'PyTorch & Deep Learning', proficiency: 88, category: 'ai' },
-    { name: 'OpenCV (Computer Vision)', proficiency: 92, category: 'ai' },
-    { name: 'YOLO Object Detection (v8/v10/v11)', proficiency: 90, category: 'ai' },
-    { name: 'RAG & LLM Integration (LangChain)', proficiency: 86, category: 'ai' },
-    { name: 'Python', proficiency: 95, category: 'languages' },
-    { name: 'TypeScript / JavaScript', proficiency: 92, category: 'languages' },
-    { name: 'SQL & Relational Logic', proficiency: 88, category: 'languages' },
-    { name: 'C# / C++ Basics', proficiency: 75, category: 'languages' },
-    { name: 'Node.js & Express', proficiency: 93, category: 'backend' },
-    { name: 'FastAPI / Flask', proficiency: 88, category: 'backend' },
-    { name: 'React (Modern hooks & state)', proficiency: 90, category: 'backend' },
-    { name: 'RESTful API Security', proficiency: 87, category: 'backend' },
-    { name: 'Docker & Containerization', proficiency: 84, category: 'tools' },
-    { name: 'Git, GitHub CI/CD Actions', proficiency: 91, category: 'tools' },
-    { name: 'Linux Administration & Shell', proficiency: 87, category: 'tools' },
-    { name: 'PostgreSQL & Vector Indexes', proficiency: 88, category: 'tools' }
+    { name: 'Laravel & Filament v3', proficiency: 92, category: 'backend' },
+    { name: 'Tailwind CSS', proficiency: 90, category: 'backend' },
+    { name: 'Flutter (Mobile & Web)', proficiency: 85, category: 'backend' },
+    { name: 'Python & Data Analysis', proficiency: 90, category: 'languages' },
+    { name: 'Machine Learning & Deep Learning', proficiency: 88, category: 'ai' },
+    { name: 'Computer Vision (YOLO, OpenCV, OCR)', proficiency: 86, category: 'ai' },
+    { name: 'NLP & LLM Integration', proficiency: 82, category: 'ai' },
+    { name: 'SQL Server, SQLite', proficiency: 88, category: 'languages' },
+    { name: 'Power BI & Excel', proficiency: 82, category: 'tools' },
+    { name: 'HTML / CSS / JavaScript', proficiency: 90, category: 'languages' },
+    { name: 'RESTful API Security', proficiency: 85, category: 'backend' },
+    { name: 'ERP Systems & Accounting Logic', proficiency: 87, category: 'tools' }
   ],
   projects: [
     {
-      id: 'robotic-sight',
-      titleAr: 'Robotic Sight - رؤية حاسوبية حية',
-      titleEn: 'Robotic Sight - Live Computer Vision',
-      descAr: 'برنامج حاسوبي عالي السرعة لإجراء رصد وتصنيف فوري متعدد الكائنات وتتبعها مع زمن تأخير أقل من 50 مللي ثانية على شبكات البث المحلي.',
-      descEn: 'High-performance surveillance tool performing real-time multi-class classification and tracking with sub-50ms processing latency on local camera grids.',
-      tags: ['YOLOv8', 'Python', 'OpenCV', 'FastAPI'],
+      id: 'erp-system',
+      titleAr: 'نظام ERP لإدارة الموارد الذاتية',
+      titleEn: 'Enterprise ERP System',
+      descAr: 'نظام ERP متكامل ومحاسبي هجين يربط بين إدارة علاقات العملاء (CRM) والدليل المحاسبي الهرمي لضمان التوازن المالي الآلي. يشمل أتمتة الفوترة، إدارة العقود والأقساط، ومحرك تنبيهات ذكي عبر واتساب ورسائل نصية.',
+      descEn: 'A hybrid integrated ERP and accounting system linking CRM with a hierarchical chart of accounts for automated financial balance. Includes billing automation, contract & installment management, and a smart notification engine via WhatsApp and SMS.',
+      tags: ['Laravel', 'Filament v3', 'MySQL', 'Tailwind CSS'],
       glow: 'indigo',
       github: 'https://github.com/kzaldyn',
       demo: '#'
     },
     {
-      id: 'arbdoc-rag',
-      titleAr: 'ArbDoc RAG - استرجاع عربي ذكي',
-      titleEn: 'ArbDoc RAG - Smart Arabic Retrieval',
-      descAr: 'مساحة عمل دلائلية بالغة التطور تسهل تدقيق مستندات PDF ثنائية اللغة عبر تهيئة قواعد البيانات المتجهية المرتبطة بالتغذية الراجعة الذكية للنماذج.',
-      descEn: 'Highly sophisticated semantic workspace optimizing bilingual (Ar/En) PDF audits by deploying vector store segment indexes combined with generative feedback loops.',
-      tags: ['LangChain', 'VectorStore', 'Python', 'PostgreSQL'],
+      id: 'traffic-system',
+      titleAr: 'نظام إدارة المخالفات الذكي',
+      titleEn: 'Smart Traffic Violation System',
+      descAr: 'حل مبتكر لتسهيل خدمات المرور عبر تطبيق يوفر بلاغات فورية وتجديد رخص القيادة. يدمج تقنيات الذكاء الاصطناعي لتصوير المركبات واستخراج أرقام اللوحات تلقائياً (OCR) مع توثيق الحوادث إلكترونياً.',
+      descEn: 'An innovative solution streamlining traffic services through an app providing instant reports and license renewal. Integrates AI for vehicle imaging and automatic license plate extraction (OCR) with electronic accident documentation.',
+      tags: ['Flutter', 'AI', 'OCR', 'Laravel'],
       glow: 'cyan',
       github: 'https://github.com/kzaldyn',
       demo: '#'
@@ -77,60 +73,60 @@ const INITIAL_DATA = {
   experience: [
     {
       id: 'ibdaa-soft',
-      companyAr: 'إبداع سوفت لخدمات الأنظمة',
-      companyEn: 'Ibdaa Soft',
-      roleAr: 'مطور أنظمة ومسؤول برمجيات مساعدة',
-      roleEn: 'Systems Developer & Tech Lead Associate',
-      period: '2024 - الحالي',
-      periodEn: '2024 - Present',
-      descAr: 'صممت ونفّذت واجهات أنظمة خلفية مرنة وشديدة الموثوقية. قدت عمليات إعادة هيكلة وتحديث فهارس قواعد البيانات العامة، مسجلاً تسريعاً بمعدل 42% لزمن معالجة الطلبات بالذروة.',
-      descEn: 'Designed and implemented robust backend web interfaces and transaction pipelines. Successfully led database refactoring pipelines, achieving an average of 42% latency reduction during peak sales hours.'
+      companyAr: 'شركة إبداع سوفت لخدمات الأنظمة',
+      companyEn: 'Ibdaa Soft for System Services',
+      roleAr: 'محاسب ومندوب دعم فني - مطور أنظمة',
+      roleEn: 'Accountant & Technical Support - Systems Developer',
+      period: '2024 - 2025',
+      periodEn: '2024 - 2025',
+      descAr: 'عملت كمحاسب ومندوب دعم فني لدى شركة إبداع سوفت، واكتسبت خبرة في التعامل مع الأنظمة المحاسبية وبرمجيات المؤسسات. ساهمت في تطوير وصيانة الأنظمة البرمجية وتقديم الدعم الفني للعملاء.',
+      descEn: 'Worked as an accountant and technical support representative at Ibdaa Soft, gaining experience with accounting systems and enterprise software. Contributed to software development and maintenance, providing technical support to clients.'
     },
     {
-      id: 'freelance',
-      companyAr: 'مختبرات الذكاء الاصطناعي - مستقل',
-      companyEn: 'AI Solutions Labs - Freelance',
-      roleAr: 'مستشار رؤية حاسوبية وتعلم آلة',
-      roleEn: 'Computer Vision & ML Consultant',
-      period: '2023 - 2024',
-      periodEn: '2023 - 2024',
-      descAr: 'دربت وهندست طبقات تصنيف صور مخصصة لتمكين الفرز التلقائي على خطوط الإنتاج. صممت أدوات حاسوبية مستقلة بلغة بايثون للتحليل الطرفي الفوري على بيئات محدودة الموارد كـ Raspberry Pi.',
-      descEn: 'Fine-tuned CNN and custom object-recognition models for automated conveyor sorters. Engineered standalone Python utilities deployed inside Raspberry Pi nodes for responsive edge analytics.'
+      id: 'freelance-dev',
+      companyAr: 'حلول البرمجيات والذكاء الاصطناعي - مستقل',
+      companyEn: 'Software & AI Solutions - Freelance',
+      roleAr: 'مطور Full-stack ومستشار تقني',
+      roleEn: 'Full-stack Developer & Technical Consultant',
+      period: '2023 - الحالي',
+      periodEn: '2023 - Present',
+      descAr: 'أطور حلول برمجية متكاملة تشمل أنظمة ERP محاسبية، تطبيقات جوال، وأنظمة رؤية حاسوبية. أدمج تقنيات الذكاء الاصطناعي مثل YOLO و OCR في تطبيقات عملية لحل مشكلات واقعية.',
+      descEn: 'Developing integrated software solutions including accounting ERP systems, mobile applications, and computer vision systems. Integrating AI technologies like YOLO and OCR into practical applications to solve real-world problems.'
     }
   ],
   roadmap: [
     {
-      id: 'tinyml',
-      titleAr: 'نماذج الذكاء الاصطناعي الطرفي (TinyML)',
-      titleEn: 'TinyML - Edge AI Models',
+      id: 'erp-adv',
+      titleAr: 'تطوير نظام ERP متكامل مع AI',
+      titleEn: 'Advanced ERP System with AI',
       statusAr: 'فعال وتطبيقي',
       statusEn: 'Active Deployment',
-      descAr: 'نشر بنيات رصد الكائنات المدمجة للعمل فوراً على المعالجات الطرفية منخفضة الطاقة وبدون الحاجة لربط إنترنت مستمر.',
-      descEn: 'Deploying compact object-detection architectures to run directly on low-power edge processors without continuous internet connectivity.'
+      descAr: 'تطوير وبناء نظام ERP متكامل ومحاسبي مع دمج تقنيات الذكاء الاصطناعي للتنبؤ المالي وأتمتة القيود المحاسبية.',
+      descEn: 'Developing and building an integrated ERP and accounting system with AI integration for financial forecasting and automated journal entries.'
     },
     {
-      id: 'mlops',
-      titleAr: 'حلقات التدريب وأتمتة MLOps',
-      titleEn: 'MLOps Training Loops & Automation',
+      id: 'cv-adv',
+      titleAr: 'أنظمة رؤية حاسوبية متقدمة',
+      titleEn: 'Advanced Computer Vision Systems',
       statusAr: 'قيد التعلم والتدريب',
       statusEn: 'Active Learning',
-      descAr: 'تصميم أنظمة آلية للمراجعة والتسمية للصور الخاطئة لإعادة تهيئة وضبط النماذج دون تدخل بشري في السحابة الخاصة.',
-      descEn: 'Designing automated systems for reviewing and labeling misclassified images to retrain and fine-tune models without human intervention in private cloud.'
+      descAr: 'تعمق في تقنيات YOLO المتقدمة وتطبيقات OCR للتعرف على اللوحات والوثائق في البيئات المعقدة.',
+      descEn: 'Deepening in advanced YOLO techniques and OCR applications for license plate and document recognition in complex environments.'
     },
     {
-      id: 'rust-vision',
-      titleAr: 'محرك رؤية حاسوبية بلغة Rust',
-      titleEn: 'Computer Vision Engine in Rust',
+      id: 'flutter-adv',
+      titleAr: 'تطبيقات جوال ذكية',
+      titleEn: 'Smart Mobile Applications',
       statusAr: 'بحث مستفيض ودراسة',
       statusEn: 'Deep Research',
-      descAr: 'برمجة وبناء مرشحات وأدوات استخلاص الكاميرات بلغة Rust لإلغاء قيود استهلاك الذاكرة وتخطي فترات جمود المفسرات التقليدية.',
-      descEn: 'Building camera extraction filters and tools in Rust to eliminate memory consumption limitations and bypass traditional interpreter latency.'
+      descAr: 'بناء تطبيقات جوال متكاملة باستخدام Flutter مع دمج الذكاء الاصطناعي لتحليل الصور والبيانات مباشرة على الجهاز.',
+      descEn: 'Building integrated mobile applications using Flutter with on-device AI integration for image and data analysis.'
     }
   ],
   contact: {
     email: 'kzaldyn67@gmail.com',
-    locationAr: 'صنعاء، اليمن',
-    locationEn: 'Sana\'a, Yemen',
+    locationAr: 'إب، اليمن',
+    locationEn: 'Ibb, Yemen',
     links: [
       { label: 'GitHub', url: 'https://github.com/kzaldyn', icon: '💻' },
       { label: 'LinkedIn', url: 'https://linkedin.com/in/kzaldyn', icon: '🔗' },
@@ -143,54 +139,54 @@ const INITIAL_DATA = {
   },
   services: [
     {
-      id: 'cv-systems',
+      id: 'erp-dev',
+      icon: '🏢',
+      titleAr: 'أنظمة ERP محاسبية',
+      titleEn: 'ERP & Accounting Systems',
+      descAr: 'تطوير أنظمة ERP متكاملة مع إدارة علاقات العملاء (CRM)، الدليل المحاسبي الهرمي، وأتمتة الفوترة والعقود.',
+      descEn: 'Developing integrated ERP systems with CRM, hierarchical chart of accounts, and automated billing & contract management.'
+    },
+    {
+      id: 'cv-ai',
       icon: '👁',
-      titleAr: 'أنظمة الرؤية الحاسوبية',
-      titleEn: 'Computer Vision Systems',
-      descAr: 'تصميم وتطوير أنظمة كشف وتصنيف الأشياء في الوقت الفعلي باستخدام YOLO و OpenCV مع زمن استجابة أقل من 50ms.',
-      descEn: 'Design and development of real-time object detection and classification systems using YOLO and OpenCV with sub-50ms latency.'
+      titleAr: 'الرؤية الحاسوبية والذكاء الاصطناعي',
+      titleEn: 'Computer Vision & AI',
+      descAr: 'حلول ذكاء اصطناعي تشمل كشف الأشياء (YOLO)، التعرف على النصوص (OCR)، وتصنيف الصور المباشر.',
+      descEn: 'AI solutions including object detection (YOLO), text recognition (OCR), and real-time image classification.'
     },
     {
-      id: 'rag-systems',
-      icon: '🔍',
-      titleAr: 'أنظمة RAG والتوليد المعزز',
-      titleEn: 'RAG & Generative Systems',
-      descAr: 'بناء محركات بحث ذكية للمستندات باستخدام LangChain وقواعد البيانات المتجهية مع توليد إجابات دقيقة بالعربية والإنجليزية.',
-      descEn: 'Building intelligent document search engines using LangChain and vector databases with accurate Arabic/English response generation.'
-    },
-    {
-      id: 'backend-dev',
-      icon: '⚙',
-      titleAr: 'تطوير الأنظمة الخلفية',
-      titleEn: 'Backend Development',
-      descAr: 'هندسة أنظمة خلفية قابلة للتوسع باستخدام Node.js و FastAPI مع قواعد بيانات PostgreSQL و RESTful APIs آمنة.',
-      descEn: 'Engineering scalable backend systems using Node.js and FastAPI with PostgreSQL databases and secure RESTful APIs.'
-    },
-    {
-      id: 'fullstack',
+      id: 'fullstack-dev',
       icon: '🖥',
-      titleAr: 'تطوير واجهات أمامية كاملة',
-      titleEn: 'Full-Stack Development',
-      descAr: 'بناء تطبيقات ويب متكاملة من الواجهة إلى قاعدة البيانات باستخدام React و TypeScript مع تجربة مستخدم عصرية.',
-      descEn: 'Building complete web applications from frontend to database using React and TypeScript with modern UX.'
+      titleAr: 'تطوير ويب Full-stack',
+      titleEn: 'Full-stack Web Development',
+      descAr: 'بناء تطبيقات ويب متكاملة باستخدام Laravel و Filament v3 و Tailwind CSS مع واجهات تفاعلية وأداء عالي.',
+      descEn: 'Building complete web applications using Laravel, Filament v3, and Tailwind CSS with interactive UIs and high performance.'
+    },
+    {
+      id: 'mobile-dev',
+      icon: '📱',
+      titleAr: 'تطبيقات جوال (Flutter)',
+      titleEn: 'Mobile Applications (Flutter)',
+      descAr: 'تطوير تطبيقات جوال متعددة المنصات باستخدام Flutter مع واجهات مستخدم عصرية وأداء سلس.',
+      descEn: 'Cross-platform mobile application development using Flutter with modern UIs and smooth performance.'
     }
   ],
   gallery: [
     {
       id: 'gallery-1',
-      imageUrl: 'https://placehold.co/800x600/1e51d8/ffffff?text=Robotic+Sight',
-      titleAr: ' Robotic Sight',
-      titleEn: 'Robotic Sight',
-      descAr: 'نظام رؤية حاسوبية فوري لكشف وتتبع الأشياء',
-      descEn: 'Real-time computer vision system for object detection and tracking'
+      imageUrl: 'https://placehold.co/800x600/1e51d8/ffffff?text=ERP+System',
+      titleAr: 'نظام ERP محاسبي',
+      titleEn: 'ERP Accounting System',
+      descAr: 'نظام ERP متكامل مع CRM ومحرك أتمتة الفوترة والتنبيهات الذكية',
+      descEn: 'Integrated ERP system with CRM, billing automation engine, and smart notifications'
     },
     {
       id: 'gallery-2',
-      imageUrl: 'https://placehold.co/800x600/6366f1/ffffff?text=ArbDoc+RAG',
-      titleAr: 'ArbDoc RAG',
-      titleEn: 'ArbDoc RAG',
-      descAr: 'محرك بحث عربي ذكي للمستندات القانونية',
-      descEn: 'Smart Arabic search engine for legal documents'
+      imageUrl: 'https://placehold.co/800x600/6366f1/ffffff?text=Traffic+System',
+      titleAr: 'نظام إدارة المخالفات',
+      titleEn: 'Traffic Violation System',
+      descAr: 'تطبيق جوال لإدارة المخالفات المرورية مع تقنية OCR للوحات السيارات',
+      descEn: 'Mobile app for traffic violation management with OCR license plate recognition'
     },
     {
       id: 'gallery-3',
