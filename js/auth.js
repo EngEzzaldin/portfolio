@@ -2,20 +2,13 @@ const AUTH = (function () {
   const PASSWORD_KEY = '_portfolio_pwd';
   const USERNAME_KEY = '_portfolio_user';
   const SESSION_KEY = '_portfolio_session';
-  const DEFAULT_USERNAME = 'admin';
-  const DEFAULT_PASSWORD = 'ezdev2024';
+  const DEFAULT_USERNAME = 'ezzo';
+  const DEFAULT_PASSWORD = 'ezzo';
   const SESSION_TTL = 24 * 60 * 60 * 1000; // 24h
 
   function _init() {
-    var stored = localStorage.getItem(PASSWORD_KEY);
-    if (!stored) {
-      _setPassword(DEFAULT_PASSWORD);
-    } else if (stored === DEFAULT_PASSWORD) {
-      _setPassword(DEFAULT_PASSWORD);
-    }
-    if (!localStorage.getItem(USERNAME_KEY)) {
-      localStorage.setItem(USERNAME_KEY, DEFAULT_USERNAME);
-    }
+    _setPassword(DEFAULT_PASSWORD);
+    localStorage.setItem(USERNAME_KEY, DEFAULT_USERNAME);
   }
 
   function _getStoredUsername() {
