@@ -7,8 +7,8 @@ const AUTH = (function () {
   const SESSION_TTL = 24 * 60 * 60 * 1000; // 24h
 
   function _init() {
-    _setPassword(DEFAULT_PASSWORD);
-    localStorage.setItem(USERNAME_KEY, DEFAULT_USERNAME);
+    if (!localStorage.getItem(PASSWORD_KEY)) _setPassword(DEFAULT_PASSWORD);
+    if (!localStorage.getItem(USERNAME_KEY)) localStorage.setItem(USERNAME_KEY, DEFAULT_USERNAME);
   }
 
   function _getStoredUsername() {

@@ -347,7 +347,7 @@ function initCMS() {
       renderHero();
       renderAbout();
       renderContact();
-      AppState.applyLang();
+      applyLang();
     });
   });
 
@@ -417,13 +417,20 @@ function initCMS() {
     }
     const d = AppState.getData();
     if (!d.contact.links) d.contact.links = [];
-    d.contact.links.push({ label, url, icon });
+    if (_editLinkIndex >= 0) {
+      d.contact.links[_editLinkIndex] = { label, url, icon };
+      _editLinkIndex = -1;
+      document.getElementById('cmsAddContactLink').textContent = '+ Add Link';
+      showToast('Contact link updated!', 'success');
+    } else {
+      d.contact.links.push({ label, url, icon });
+      showToast('Contact link added!', 'success');
+    }
     AppState.setData(d);
     document.getElementById('cmsContactLabel').value = '';
     document.getElementById('cmsContactLinkUrl').value = '';
     document.getElementById('cmsContactIcon').value = '';
     renderAll();
-    showToast('Contact link added!', 'success');
   });
 
   document.getElementById('cmsAddService').addEventListener('click', () => {
@@ -529,6 +536,8 @@ function renderCMSRoadmap() {
   });
 }
 
+var _editLinkIndex = -1;
+
 function renderCMSContactLinks() {
   const d = AppState.getData();
   const list = document.getElementById('cmsContactLinksList');
@@ -536,7 +545,10 @@ function renderCMSContactLinks() {
   list.innerHTML = (d.contact.links || []).map((link, i) => `
     <div class="cms-skill-item">
       <span class="cms-item-name">${escapeHtml(link.icon || '🔗')} ${escapeHtml(link.label)}</span>
-      <button class="cms-item-delete" data-contact-del="${i}">&times;</button>
+      <span>
+        <button class="cms-item-edit" data-link-edit="${i}" title="Edit" style="background:none;border:none;color:var(--clr-accent);cursor:pointer;padding:2px 6px;font-size:0.8rem;">&#9998;</button>
+        <button class="cms-item-delete" data-contact-del="${i}">&times;</button>
+      </span>
     </div>
   `).join('');
   list.querySelectorAll('[data-contact-del]').forEach(btn => {
@@ -547,6 +559,18 @@ function renderCMSContactLinks() {
       d.contact.links.splice(idx, 1);
       AppState.setData(d);
       renderAll();
+    });
+  });
+  list.querySelectorAll('[data-link-edit]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.linkEdit);
+      const link = AppState.getData().contact.links[idx];
+      _editLinkIndex = idx;
+      document.getElementById('cmsContactLabel').value = link.label;
+      document.getElementById('cmsContactIcon').value = link.icon || '';
+      document.getElementById('cmsContactLinkUrl').value = link.url;
+      document.getElementById('cmsAddContactLink').textContent = 'Update Link';
+      document.getElementById('cmsAddContactLink').scrollIntoView({ behavior: 'smooth' });
     });
   });
 }

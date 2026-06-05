@@ -17,7 +17,10 @@ const AppState = {
     }
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
-      try { this.data = JSON.parse(saved); }
+      try {
+        this.data = JSON.parse(saved);
+        this._patchMissing();
+      }
       catch { this.data = JSON.parse(JSON.stringify(INITIAL_DATA)); }
     } else {
       this.data = JSON.parse(JSON.stringify(INITIAL_DATA));
@@ -68,6 +71,16 @@ const AppState = {
   deleteMessage(id) {
     this.inbox = this.inbox.filter(m => m.id !== id);
     this.save();
+  },
+
+  _patchMissing() {
+    const defaults = INITIAL_DATA;
+    if (!this.data.services) this.data.services = JSON.parse(JSON.stringify(defaults.services));
+    if (!this.data.gallery) this.data.gallery = JSON.parse(JSON.stringify(defaults.gallery));
+    if (!this.data.roadmap) this.data.roadmap = JSON.parse(JSON.stringify(defaults.roadmap));
+    if (!this.data.contact.links) this.data.contact.links = JSON.parse(JSON.stringify(defaults.contact.links));
+    if (!this.data.contact.locationAr) this.data.contact.locationAr = defaults.contact.locationAr;
+    if (!this.data.contact.locationEn) this.data.contact.locationEn = defaults.contact.locationEn;
   }
 };
 
