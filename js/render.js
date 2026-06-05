@@ -21,6 +21,7 @@ function renderAbout() {
 function renderSkills() {
   const d = AppState.getData();
   const grid = document.getElementById('techGrid');
+  if (!grid || !d.skills) return;
   const activeFilter = document.querySelector('.tech-filter-btn.active');
   const filter = activeFilter ? activeFilter.dataset.filter : 'all';
   const search = document.getElementById('techSearch').value.toLowerCase().trim();
@@ -44,6 +45,7 @@ function renderProjects() {
   const d = AppState.getData();
   const lang = AppState.getLang();
   const grid = document.getElementById('projectsGrid');
+  if (!grid || !d.projects) return;
   grid.innerHTML = d.projects.map(function (p) {
     return '<div class="project-card ' + p.glow + '-border">' +
       '<div class="project-glow ' + p.glow + '"></div>' +
@@ -68,6 +70,7 @@ function renderTimeline() {
   const d = AppState.getData();
   const lang = AppState.getLang();
   const el = document.getElementById('timeline');
+  if (!el || !d.experience) return;
   el.innerHTML = d.experience.map(function (exp) {
     return '<div class="timeline-item">' +
       '<div class="timeline-dot"></div>' +
@@ -85,6 +88,7 @@ function renderRoadmap() {
   const d = AppState.getData();
   const lang = AppState.getLang();
   const grid = document.getElementById('roadmapGrid');
+  if (!grid || !d.roadmap) return;
   var statusMap = {
     'Active Deployment': { class: 'active', en: 'Active Deployment', ar: 'فعال وتطبيقي' },
     'Active Learning': { class: 'learning', en: 'Active Learning', ar: 'قيد التعلم والتدريب' },

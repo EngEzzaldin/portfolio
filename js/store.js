@@ -1,7 +1,7 @@
 const STORAGE_KEY = 'portfolio_data';
 const LANG_KEY = 'portfolio_lang';
 const DATA_VERSION_KEY = '_portfolio_data_version';
-const DATA_VERSION = 2;
+const DATA_VERSION = 3;
 
 const AppState = {
   data: null,
